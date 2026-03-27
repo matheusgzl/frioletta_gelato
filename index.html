@@ -103,19 +103,23 @@
     <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-frio-red shadow-sm py-4">
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <div
-            class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-frio-red"
-          >
-            <i data-lucide="ice-cream" class="w-5 h-5"></i>
-          </div>
-          <span class="font-display text-2xl tracking-wide text-white"
+        <div class="flex items-center gap-3">
+          <!-- Espaço para a logo da Frioletta Gelato -->
+          <!-- Substitua o 'src' abaixo pelo link ou caminho da sua imagem (ex: './logo.png') -->
+          <img
+            src="imagens/logo_frioletta.png"
+            alt="Logo Frioletta Gelato"
+            class="h-10 w-auto object-contain rounded"
+          />
+          <!-- Você pode remover o texto abaixo se a sua imagem de logo já contiver o nome escrito -->
+          <span
+            class="font-display text-2xl tracking-wide text-white hidden sm:block"
             >Frioletta</span
           >
         </div>
 
         <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-8">
+        <div class="hidden lg:flex items-center gap-8">
           <a
             href="#produtos"
             class="text-sm font-medium text-white/90 hover:text-white transition-colors"
@@ -131,6 +135,11 @@
             class="text-sm font-medium text-white/90 hover:text-white transition-colors"
             >A Experiência</a
           >
+          <a
+            href="#equipe"
+            class="text-sm font-medium text-white/90 hover:text-white transition-colors"
+            >Equipe</a
+          >
           <button
             class="bg-white text-frio-red px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-frio-cream transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
           >
@@ -139,36 +148,61 @@
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="md:hidden text-white">
+        <button id="mobile-menu-btn" class="lg:hidden text-white">
           <i data-lucide="menu" id="menu-icon"></i>
         </button>
       </div>
 
-      <!-- Mobile Nav -->
+      <!-- Mobile Menu Backdrop -->
+      <div
+        id="mobile-menu-backdrop"
+        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"
+      ></div>
+
+      <!-- Mobile Nav Sidebar -->
       <div
         id="mobile-menu"
-        class="hidden absolute top-full left-0 w-full bg-white shadow-lg py-6 px-6 flex-col gap-4 md:hidden"
+        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col lg:hidden"
       >
-        <a
-          href="#produtos"
-          class="mobile-link text-lg font-medium text-gray-800"
-          >Produtos</a
-        >
-        <a
-          href="#essencia"
-          class="mobile-link text-lg font-medium text-gray-800"
-          >Nossa Essência</a
-        >
-        <a
-          href="#experiencia"
-          class="mobile-link text-lg font-medium text-gray-800"
-          >A Experiência</a
-        >
-        <button
-          class="bg-frio-red text-white px-6 py-3 rounded-full text-lg font-semibold mt-4 w-full"
-        >
-          Peça Delivery
-        </button>
+        <div class="flex justify-end p-6 border-b border-gray-100">
+          <button
+            id="close-menu-btn"
+            class="text-gray-500 hover:text-frio-red transition-colors group"
+          >
+            <i
+              data-lucide="x"
+              class="w-8 h-8 transition-transform duration-500"
+              id="close-icon"
+            ></i>
+          </button>
+        </div>
+        <div class="flex flex-col gap-6 p-8">
+          <a
+            href="#produtos"
+            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
+            >Produtos</a
+          >
+          <a
+            href="#essencia"
+            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
+            >Nossa Essência</a
+          >
+          <a
+            href="#experiencia"
+            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
+            >A Experiência</a
+          >
+          <a
+            href="#equipe"
+            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
+            >Equipe</a
+          >
+          <button
+            class="bg-frio-red text-white px-6 py-4 rounded-full text-lg font-semibold mt-4 w-full shadow-lg shadow-frio-red/20 active:scale-95 transition-all"
+          >
+            Peça Delivery
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -197,11 +231,6 @@
         </div>
 
         <div class="relative z-10 text-white max-w-xl fade-left">
-          <span
-            class="uppercase tracking-[0.2em] text-sm font-semibold mb-6 block opacity-90"
-          >
-            Agência Segundo 2026
-          </span>
           <h1
             class="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 drop-shadow-sm"
           >
@@ -229,7 +258,7 @@
       <div class="w-full md:w-1/2 h-[50vh] md:h-auto relative overflow-hidden">
         <div class="absolute inset-0 w-full h-full">
           <img
-            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop"
+            src="imagens/moca_com_sorvete_.png"
             alt="Mulher sorrindo tomando sorvete no verão"
             class="w-full h-full object-cover"
             referrerpolicy="no-referrer"
@@ -325,83 +354,173 @@
           </button>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[600px]">
-          <!-- Açaí -->
+        <div class="relative overflow-hidden px-4 -mx-4" id="flavors-carousel">
           <div
-            class="relative rounded-3xl overflow-hidden group h-[400px] lg:h-full fade-up"
+            class="flex transition-transform duration-700 ease-in-out h-[400px] lg:h-[600px]"
+            id="flavors-track"
           >
-            <img
-              src="https://images.unsplash.com/photo-1590137876181-2a5a7e340308?q=80&w=1932&auto=format&fit=crop"
-              alt="Tigela de Açaí"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerpolicy="no-referrer"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-frio-purple/90 via-frio-purple/20 to-transparent"
-            ></div>
-            <div class="absolute bottom-0 left-0 p-8 w-full">
-              <span
-                class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+            <!-- Açaí -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                data-product="acai"
               >
-                Energia Natural
-              </span>
-              <h3 class="font-display text-5xl text-white mb-2">Açaí</h3>
-              <p class="text-white/90 font-light">
-                Cremoso, refrescante e do seu jeito.
-              </p>
+                <img
+                  src="https://images.unsplash.com/photo-1590137876181-2a5a7e340308?q=80&w=1932&auto=format&fit=crop"
+                  alt="Tigela de Açaí"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-frio-purple/90 via-frio-purple/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                  <span
+                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  >
+                    Energia Natural
+                  </span>
+                  <h3 class="font-display text-5xl text-white mb-2">Açaí</h3>
+                  <p class="text-white/90 font-light">
+                    Cremoso, refrescante e do seu jeito.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sorvete -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-3xl overflow-hidden group h-full fade-up delay-200 cursor-pointer product-card"
+                data-product="sorvete"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop"
+                  alt="Sorvete Artesanal"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-frio-red/90 via-frio-red/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                  <span
+                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  >
+                    Artesanal
+                  </span>
+                  <h3 class="font-display text-5xl text-white mb-2">Sorvete</h3>
+                  <p class="text-white/90 font-light">
+                    Um pedaço de verão em cada mordida.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Picolé -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-3xl overflow-hidden group h-full fade-up delay-400 cursor-pointer product-card"
+                data-product="picole"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2070&auto=format&fit=crop"
+                  alt="Picolé de Frutas"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-frio-orange/90 via-frio-orange/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                  <span
+                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  >
+                    Refrescante
+                  </span>
+                  <h3 class="font-display text-5xl text-white mb-2">Picolé</h3>
+                  <p class="text-white/90 font-light">
+                    A praticidade de ser feliz em qualquer lugar.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milkshake -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                data-product="milkshake"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1974&auto=format&fit=crop"
+                  alt="Milkshake Cremoso"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-frio-purple/90 via-frio-purple/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                  <span
+                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  >
+                    Clássico
+                  </span>
+                  <h3 class="font-display text-5xl text-white mb-2">
+                    Milkshake
+                  </h3>
+                  <p class="text-white/90 font-light">
+                    A combinação perfeita batida na hora.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sundae -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                data-product="sundae"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1974&auto=format&fit=crop"
+                  alt="Sundae Especial"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-frio-red/90 via-frio-red/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                  <span
+                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  >
+                    Indulgente
+                  </span>
+                  <h3 class="font-display text-5xl text-white mb-2">Sundae</h3>
+                  <p class="text-white/90 font-light">
+                    Camadas de sabor e texturas incríveis.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Sorvete -->
-          <div
-            class="relative rounded-3xl overflow-hidden group h-[400px] lg:h-full fade-up delay-200"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop"
-              alt="Sorvete Artesanal"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerpolicy="no-referrer"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-frio-red/90 via-frio-red/20 to-transparent"
-            ></div>
-            <div class="absolute bottom-0 left-0 p-8 w-full">
-              <span
-                class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
-              >
-                Artesanal
-              </span>
-              <h3 class="font-display text-5xl text-white mb-2">Sorvete</h3>
-              <p class="text-white/90 font-light">
-                Um pedaço de verão em cada mordida.
-              </p>
-            </div>
-          </div>
-
-          <!-- Picolé -->
-          <div
-            class="relative rounded-3xl overflow-hidden group h-[400px] lg:h-full fade-up delay-400"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2070&auto=format&fit=crop"
-              alt="Picolé de Frutas"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerpolicy="no-referrer"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-frio-orange/90 via-frio-orange/20 to-transparent"
-            ></div>
-            <div class="absolute bottom-0 left-0 p-8 w-full">
-              <span
-                class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
-              >
-                Refrescante
-              </span>
-              <h3 class="font-display text-5xl text-white mb-2">Picolé</h3>
-              <p class="text-white/90 font-light">
-                A praticidade de ser feliz em qualquer lugar.
-              </p>
-            </div>
+          <!-- Flavors Controls -->
+          <div class="flex justify-center gap-4 mt-8">
+            <button
+              id="prev-flavor"
+              class="w-12 h-12 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
+            >
+              <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button
+              id="next-flavor"
+              class="w-12 h-12 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
+            >
+              <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -492,6 +611,302 @@
           </div>
         </div>
       </div>
+
+      <!-- Testimonials Carousel -->
+      <div class="max-w-7xl mx-auto mt-32 fade-up">
+        <div class="text-center mb-16">
+          <h3 class="font-display text-4xl md:text-5xl text-frio-purple mb-4">
+            O que dizem sobre nós
+          </h3>
+          <p class="text-gray-600 text-lg">
+            Alegria compartilhada por quem já provou.
+          </p>
+        </div>
+
+        <div class="relative overflow-hidden px-4" id="testimonial-carousel">
+          <div
+            class="flex transition-transform duration-500 ease-in-out"
+            id="testimonial-track"
+          >
+            <!-- Testimonial 1 -->
+            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
+              <div
+                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+              >
+                <div class="flex gap-1 text-frio-orange mb-6">
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+                <p
+                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                >
+                  "O melhor gelato de pistache que já provei! O ambiente é super
+                  acolhedor e o atendimento impecável. Com certeza voltarei mais
+                  vezes para provar os outros sabores."
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
+                      alt="Mariana Silva"
+                      class="w-full h-full object-cover"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Mariana Silva</h4>
+                    <p class="text-sm text-gray-500">Cliente Fiel</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
+              <div
+                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+              >
+                <div class="flex gap-1 text-frio-orange mb-6">
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+                <p
+                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                >
+                  "Açaí perfeito, no ponto certo e com acompanhamentos frescos.
+                  As crianças adoraram os picolés de frutas. Virou nosso passeio
+                  de domingo oficial!"
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+                      alt="Carlos Mendes"
+                      class="w-full h-full object-cover"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Carlos Mendes</h4>
+                    <p class="text-sm text-gray-500">Pai de Gêmeos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
+              <div
+                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+              >
+                <div class="flex gap-1 text-frio-orange mb-6">
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+                <p
+                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                >
+                  "Sou apaixonada pela textura dos gelatos. Dá pra sentir que é
+                  feito com ingredientes de verdade. O de morango com manjericão
+                  é uma surpresa maravilhosa!"
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+                      alt="Ana Beatriz"
+                      class="w-full h-full object-cover"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Ana Beatriz</h4>
+                    <p class="text-sm text-gray-500">Foodie</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
+              <div
+                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+              >
+                <div class="flex gap-1 text-frio-orange mb-6">
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 text-gray-300"></i>
+                </div>
+                <p
+                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                >
+                  "Lugar lindo, super instagramável e os sabores são bem
+                  autênticos. O delivery também funciona super bem, chega tudo
+                  geladinho."
+                </p>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                      alt="Rafael Costa"
+                      class="w-full h-full object-cover"
+                      referrerpolicy="no-referrer"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Rafael Costa</h4>
+                    <p class="text-sm text-gray-500">Designer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex justify-center gap-4 mt-12">
+            <button
+              id="prev-testimonial"
+              class="w-12 h-12 rounded-full border-2 border-frio-purple text-frio-purple flex items-center justify-center hover:bg-frio-purple hover:text-white transition-all active:scale-95"
+            >
+              <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+            <button
+              id="next-testimonial"
+              class="w-12 h-12 rounded-full border-2 border-frio-purple text-frio-purple flex items-center justify-center hover:bg-frio-purple hover:text-white transition-all active:scale-95"
+            >
+              <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="py-24 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+          <h2 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">
+            Nossa Equipe
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Conheça as pessoas apaixonadas por trás de cada sabor e sorriso na
+            Frioletta.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Membro 1 -->
+          <div class="fade-up group">
+            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1984&auto=format&fit=crop"
+                alt="Membro da Equipe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerpolicy="no-referrer"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              >
+                <div class="flex gap-3 text-white">
+                  <i
+                    data-lucide="instagram"
+                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
+                  ></i>
+                  <i
+                    data-lucide="linkedin"
+                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 2 -->
+          <div class="fade-up delay-100 group">
+            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                alt="Membro da Equipe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerpolicy="no-referrer"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              >
+                <div class="flex gap-3 text-white">
+                  <i
+                    data-lucide="instagram"
+                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 3 -->
+          <div class="fade-up delay-200 group">
+            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1600878459198-5114b087d956?q=80&w=1974&auto=format&fit=crop"
+                alt="Membro da Equipe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerpolicy="no-referrer"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              >
+                <div class="flex gap-3 text-white">
+                  <i
+                    data-lucide="instagram"
+                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 4 -->
+          <div class="fade-up delay-400 group">
+            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?q=80&w=1964&auto=format&fit=crop"
+                alt="Membro da Equipe"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                referrerpolicy="no-referrer"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+              >
+                <div class="flex gap-3 text-white">
+                  <i
+                    data-lucide="instagram"
+                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -533,6 +948,11 @@
               >
             </li>
             <li>
+              <a href="#equipe" class="hover:text-white transition-colors"
+                >Nossa Equipe</a
+              >
+            </li>
+            <li>
               <a href="#" class="hover:text-white transition-colors"
                 >Lojas Físicas</a
               >
@@ -565,6 +985,70 @@
       </div>
     </footer>
 
+    <!-- Product Modal -->
+    <div
+      id="product-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center px-4 opacity-0 transition-opacity duration-300"
+    >
+      <div
+        id="modal-backdrop"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+      ></div>
+
+      <div
+        class="relative bg-white rounded-3xl overflow-hidden w-full max-w-4xl shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300"
+        id="modal-content-container"
+      >
+        <button
+          id="close-modal"
+          class="absolute top-4 right-4 z-10 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-gray-900 hover:bg-white hover:scale-110 transition-all shadow-sm"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+          <img
+            id="modal-img"
+            src=""
+            alt=""
+            class="w-full h-full object-cover"
+            referrerpolicy="no-referrer"
+          />
+        </div>
+
+        <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+          <span
+            id="modal-tag"
+            class="inline-block px-4 py-1 bg-frio-cream text-frio-purple rounded-full text-sm font-medium mb-4 w-max border border-frio-purple/10"
+          ></span>
+          <h3
+            id="modal-title"
+            class="font-display text-4xl md:text-5xl text-gray-900 mb-4"
+          ></h3>
+          <p
+            id="modal-desc"
+            class="text-gray-600 text-lg mb-8 leading-relaxed"
+          ></p>
+
+          <div class="mb-8">
+            <h4
+              class="font-semibold text-gray-900 mb-3 flex items-center gap-2"
+            >
+              <i data-lucide="sparkles" class="w-4 h-4 text-frio-orange"></i>
+              Sabores Populares
+            </h4>
+            <p id="modal-flavors" class="text-gray-600 font-light"></p>
+          </div>
+
+          <button
+            class="bg-frio-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors w-full md:w-auto text-center shadow-lg shadow-frio-red/20 active:scale-95"
+          >
+            Pedir Agora
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script>
       // Initialize Lucide Icons
@@ -572,32 +1056,62 @@
 
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("mobile-menu-btn");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
+      const mobileMenuBackdrop = document.getElementById(
+        "mobile-menu-backdrop",
+      );
+      const closeIcon = document.getElementById("close-icon");
       const mobileLinks = document.querySelectorAll(".mobile-link");
 
-      let isMenuOpen = false;
+      function openMenu() {
+        // Show backdrop
+        mobileMenuBackdrop.classList.remove("hidden");
+        // Trigger reflow for transition
+        void mobileMenuBackdrop.offsetWidth;
+        mobileMenuBackdrop.classList.remove("opacity-0");
+        mobileMenuBackdrop.classList.add("opacity-100");
 
-      function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-          mobileMenu.classList.remove("hidden");
-          mobileMenu.classList.add("flex");
-          menuIcon.setAttribute("data-lucide", "x");
-        } else {
-          mobileMenu.classList.add("hidden");
-          mobileMenu.classList.remove("flex");
-          menuIcon.setAttribute("data-lucide", "menu");
-        }
-        lucide.createIcons();
+        // Slide in menu
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+
+        document.body.style.overflow = "hidden"; // Prevent scrolling
       }
 
-      menuBtn.addEventListener("click", toggleMenu);
-      mobileLinks.forEach((link) =>
-        link.addEventListener("click", () => {
-          if (isMenuOpen) toggleMenu();
-        }),
-      );
+      function closeMenu() {
+        // Slide out menu
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+
+        // Hide backdrop
+        mobileMenuBackdrop.classList.remove("opacity-100");
+        mobileMenuBackdrop.classList.add("opacity-0");
+
+        setTimeout(() => {
+          mobileMenuBackdrop.classList.add("hidden");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      menuBtn.addEventListener("click", openMenu);
+
+      closeMenuBtn.addEventListener("click", () => {
+        // Add rotation effect
+        closeIcon.classList.add("rotate-180");
+        closeMenu();
+
+        // Reset rotation after animation finishes
+        setTimeout(() => {
+          closeIcon.classList.remove("rotate-180");
+        }, 300);
+      });
+
+      mobileMenuBackdrop.addEventListener("click", closeMenu);
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
 
       // Scroll Animations
       const observerOptions = {
@@ -620,6 +1134,217 @@
         .forEach((el) => {
           observer.observe(el);
         });
+
+      // Testimonial Carousel
+      const track = document.getElementById("testimonial-track");
+      const prevBtn = document.getElementById("prev-testimonial");
+      const nextBtn = document.getElementById("next-testimonial");
+
+      if (track && prevBtn && nextBtn) {
+        let currentIndex = 0;
+        const items = track.children;
+        const totalItems = items.length;
+
+        function updateCarousel() {
+          let itemsPerView = 1;
+          if (window.innerWidth >= 1024) itemsPerView = 3;
+          else if (window.innerWidth >= 768) itemsPerView = 2;
+
+          const maxIndex = Math.max(0, totalItems - itemsPerView);
+          if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+          const percentage = -(currentIndex * (100 / itemsPerView));
+          track.style.transform = `translateX(${percentage}%)`;
+        }
+
+        prevBtn.addEventListener("click", () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+
+        nextBtn.addEventListener("click", () => {
+          let itemsPerView = 1;
+          if (window.innerWidth >= 1024) itemsPerView = 3;
+          else if (window.innerWidth >= 768) itemsPerView = 2;
+
+          const maxIndex = Math.max(0, totalItems - itemsPerView);
+          if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+
+        window.addEventListener("resize", updateCarousel);
+        updateCarousel();
+      }
+
+      // Flavors Carousel Logic
+      const flavorsTrack = document.getElementById("flavors-track");
+      const prevFlavorBtn = document.getElementById("prev-flavor");
+      const nextFlavorBtn = document.getElementById("next-flavor");
+
+      if (flavorsTrack) {
+        let fIndex = 0;
+        const fItems = flavorsTrack.children;
+        const fTotal = fItems.length;
+        let flavorInterval;
+
+        function updateFlavorsCarousel() {
+          let ipv = 1;
+          if (window.innerWidth >= 1024) ipv = 3;
+          else if (window.innerWidth >= 768) ipv = 2;
+
+          const max = Math.max(0, fTotal - ipv);
+          if (fIndex > max) fIndex = 0;
+          if (fIndex < 0) fIndex = max;
+
+          const pct = -(fIndex * (100 / ipv));
+          flavorsTrack.style.transform = `translateX(${pct}%)`;
+        }
+
+        function nextFlavor() {
+          let ipv = 1;
+          if (window.innerWidth >= 1024) ipv = 3;
+          else if (window.innerWidth >= 768) ipv = 2;
+
+          const max = Math.max(0, fTotal - ipv);
+          fIndex++;
+          if (fIndex > max) fIndex = 0;
+          updateFlavorsCarousel();
+        }
+
+        function prevFlavor() {
+          let ipv = 1;
+          if (window.innerWidth >= 1024) ipv = 3;
+          else if (window.innerWidth >= 768) ipv = 2;
+
+          const max = Math.max(0, fTotal - ipv);
+          fIndex--;
+          if (fIndex < 0) fIndex = max;
+          updateFlavorsCarousel();
+        }
+
+        function resetFlavorInterval() {
+          clearInterval(flavorInterval);
+          flavorInterval = setInterval(nextFlavor, 4000);
+        }
+
+        if (prevFlavorBtn && nextFlavorBtn) {
+          prevFlavorBtn.addEventListener("click", () => {
+            prevFlavor();
+            resetFlavorInterval();
+          });
+          nextFlavorBtn.addEventListener("click", () => {
+            nextFlavor();
+            resetFlavorInterval();
+          });
+        }
+
+        window.addEventListener("resize", updateFlavorsCarousel);
+        updateFlavorsCarousel();
+        flavorInterval = setInterval(nextFlavor, 4000); // Auto-play every 4s
+      }
+
+      // Product Modal Logic
+      const productData = {
+        acai: {
+          title: "Açaí",
+          tag: "Energia Natural",
+          desc: "Cremoso, refrescante e do seu jeito. Nosso açaí é batido na hora, garantindo a textura perfeita e o sabor autêntico da Amazônia. Escolha seus acompanhamentos favoritos e monte a tigela dos seus sonhos.",
+          flavors: "Tradicional, Zero Açúcar, Com Morango, Com Banana",
+          img: "https://images.unsplash.com/photo-1590137876181-2a5a7e340308?q=80&w=1932&auto=format&fit=crop",
+        },
+        sorvete: {
+          title: "Sorvete Artesanal",
+          tag: "Artesanal",
+          desc: "Um pedaço de verão em cada mordida. Produzidos diariamente com ingredientes frescos e selecionados, nossos gelatos oferecem uma cremosidade inigualável e um sabor que abraça.",
+          flavors:
+            "Pistache, Chocolate Belga, Morango com Manjericão, Doce de Leite, Baunilha de Madagascar",
+          img: "https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop",
+        },
+        picole: {
+          title: "Picolé",
+          tag: "Refrescante",
+          desc: "A praticidade de ser feliz em qualquer lugar. Picolés recheados e de frutas, feitos com água de coco ou leite fresco. A opção perfeita para os dias mais quentes do ano.",
+          flavors:
+            "Limão Siciliano, Morango com Leite Condensado, Coco Queimado, Maracujá, Uva",
+          img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2070&auto=format&fit=crop",
+        },
+        milkshake: {
+          title: "Milkshake",
+          tag: "Clássico",
+          desc: "A combinação perfeita de sorvete artesanal e leite, batido na textura ideal. Uma bebida cremosa, gelada e extremamente saborosa para acompanhar qualquer momento.",
+          flavors: "Ovomaltine, Morango, Chocolate, Baunilha, Nutella",
+          img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1974&auto=format&fit=crop",
+        },
+        sundae: {
+          title: "Sundae",
+          tag: "Indulgente",
+          desc: "Camadas de sabor com nosso gelato, caldas artesanais quentinhas e toppings crocantes. A sobremesa perfeita para quem quer uma experiência completa.",
+          flavors: "Caramelo Salgado, Chocolate Quente, Frutas Vermelhas",
+          img: "https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1974&auto=format&fit=crop",
+        },
+      };
+
+      const modal = document.getElementById("product-modal");
+      const modalBackdrop = document.getElementById("modal-backdrop");
+      const modalContent = document.getElementById("modal-content-container");
+      const closeModalBtn = document.getElementById("close-modal");
+
+      const modalImg = document.getElementById("modal-img");
+      const modalTag = document.getElementById("modal-tag");
+      const modalTitle = document.getElementById("modal-title");
+      const modalDesc = document.getElementById("modal-desc");
+      const modalFlavors = document.getElementById("modal-flavors");
+
+      function openModal(productId) {
+        const data = productData[productId];
+        if (!data) return;
+
+        modalImg.src = data.img;
+        modalTag.textContent = data.tag;
+        modalTitle.textContent = data.title;
+        modalDesc.textContent = data.desc;
+        modalFlavors.textContent = data.flavors;
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        // Trigger reflow for transition
+        void modal.offsetWidth;
+
+        modal.classList.remove("opacity-0");
+        modal.classList.add("opacity-100");
+        modalContent.classList.remove("scale-95");
+        modalContent.classList.add("scale-100");
+
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+        lucide.createIcons(); // Re-init icons if needed
+      }
+
+      function closeModal() {
+        modal.classList.remove("opacity-100");
+        modal.classList.add("opacity-0");
+        modalContent.classList.remove("scale-100");
+        modalContent.classList.add("scale-95");
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      document.querySelectorAll(".product-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          openModal(card.dataset.product);
+        });
+      });
+
+      closeModalBtn.addEventListener("click", closeModal);
+      modalBackdrop.addEventListener("click", closeModal);
     </script>
   </body>
 </html>
