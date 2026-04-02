@@ -57,42 +57,56 @@
       /* Animation Classes */
       .fade-up {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px) scale(0.95);
         transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .fade-up.in-view {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
       .fade-left {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-50px) scale(0.95);
         transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .fade-left.in-view {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
       }
       .fade-right {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(50px) scale(0.95);
         transition:
-          opacity 0.8s ease-out,
-          transform 0.8s ease-out;
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .fade-right.in-view {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(0) scale(1);
+      }
+      .zoom-in {
+        opacity: 0;
+        transform: scale(0.85);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .zoom-in.in-view {
+        opacity: 1;
+        transform: scale(1);
       }
       .delay-100 {
         transition-delay: 100ms;
       }
       .delay-200 {
         transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
       }
       .delay-400 {
         transition-delay: 400ms;
@@ -114,7 +128,7 @@
           <!-- Você pode remover o texto abaixo se a sua imagem de logo já contiver o nome escrito -->
           <span
             class="font-display text-2xl tracking-wide text-white hidden sm:block"
-            >Frioletta</span
+            >Frioletta Gelato</span
           >
         </div>
 
@@ -140,11 +154,14 @@
             class="text-sm font-medium text-white/90 hover:text-white transition-colors"
             >Equipe</a
           >
-          <button
-            class="bg-white text-frio-red px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-frio-cream transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10"
+          <a
+            href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido de delivery."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white text-frio-red px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-frio-cream transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/10 inline-block text-center"
           >
             Peça Delivery
-          </button>
+          </a>
         </div>
 
         <!-- Mobile Menu Toggle -->
@@ -162,7 +179,7 @@
       <!-- Mobile Nav Sidebar -->
       <div
         id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col lg:hidden"
+        class="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-50 transform translate-x-8 opacity-0 scale-95 transition-all duration-300 ease-out flex flex-col lg:hidden hidden origin-right"
       >
         <div class="flex justify-end p-6 border-b border-gray-100">
           <button
@@ -171,7 +188,7 @@
           >
             <i
               data-lucide="x"
-              class="w-8 h-8 transition-transform duration-500"
+              class="w-8 h-8 transition-all duration-300 ease-in-out"
               id="close-icon"
             ></i>
           </button>
@@ -197,11 +214,14 @@
             class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
             >Equipe</a
           >
-          <button
-            class="bg-frio-red text-white px-6 py-4 rounded-full text-lg font-semibold mt-4 w-full shadow-lg shadow-frio-red/20 active:scale-95 transition-all"
+          <a
+            href="https://wa.me/5511999999999?text=Olá! Gostaria de fazer um pedido de delivery."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-frio-red text-white px-6 py-4 rounded-full text-lg font-semibold mt-4 w-full shadow-lg shadow-frio-red/20 active:scale-95 transition-all inline-block text-center"
           >
             Peça Delivery
-          </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -255,10 +275,13 @@
       </div>
 
       <!-- Right Image -->
-      <div class="w-full md:w-1/2 h-[50vh] md:h-auto relative overflow-hidden">
-        <div class="absolute inset-0 w-full h-full">
+      <div class="w-full md:w-1/2 h-[60vh] md:h-auto relative overflow-hidden">
+        <div
+          class="absolute top-[-60vh] left-0 w-full h-[160vh] parallax-wrapper"
+          data-speed="-0.6"
+        >
           <img
-            src="imagens/moca_com_sorvete_.png"
+            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop"
             alt="Mulher sorrindo tomando sorvete no verão"
             class="w-full h-full object-cover"
             referrerpolicy="no-referrer"
@@ -281,7 +304,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div class="flex flex-col items-center text-center group fade-up">
+          <div class="flex flex-col items-center text-center group zoom-in">
             <div
               class="w-32 h-32 rounded-full bg-frio-orange flex items-center justify-center text-white mb-6 shadow-xl transition-transform duration-500 group-hover:scale-110"
             >
@@ -295,7 +318,7 @@
           </div>
 
           <div
-            class="flex flex-col items-center text-center group fade-up delay-200"
+            class="flex flex-col items-center text-center group zoom-in delay-200"
           >
             <div
               class="w-32 h-32 rounded-full bg-frio-red flex items-center justify-center text-white mb-6 shadow-xl transition-transform duration-500 group-hover:scale-110"
@@ -314,7 +337,7 @@
           </div>
 
           <div
-            class="flex flex-col items-center text-center group fade-up delay-400"
+            class="flex flex-col items-center text-center group zoom-in delay-400"
           >
             <div
               class="w-32 h-32 rounded-full bg-frio-purple flex items-center justify-center text-white mb-6 shadow-xl transition-transform duration-500 group-hover:scale-110"
@@ -356,13 +379,13 @@
 
         <div class="relative overflow-hidden px-4 -mx-4" id="flavors-carousel">
           <div
-            class="flex transition-transform duration-700 ease-in-out h-[400px] lg:h-[600px]"
+            class="flex transition-transform duration-700 ease-in-out h-[300px] lg:h-[400px]"
             id="flavors-track"
           >
             <!-- Açaí -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 data-product="acai"
               >
                 <img
@@ -391,7 +414,7 @@
             <!-- Sorvete -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full fade-up delay-200 cursor-pointer product-card"
+                class="relative rounded-3xl overflow-hidden group h-full zoom-in delay-200 cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 data-product="sorvete"
               >
                 <img
@@ -420,7 +443,7 @@
             <!-- Picolé -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full fade-up delay-400 cursor-pointer product-card"
+                class="relative rounded-3xl overflow-hidden group h-full zoom-in delay-400 cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 data-product="picole"
               >
                 <img
@@ -449,7 +472,7 @@
             <!-- Milkshake -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 data-product="milkshake"
               >
                 <img
@@ -480,7 +503,7 @@
             <!-- Sundae -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full fade-up cursor-pointer product-card"
+                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 data-product="sundae"
               >
                 <img
@@ -813,9 +836,9 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Membro 1 -->
-          <div class="fade-up group">
+          <div class="zoom-in group">
             <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
               <img
                 src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1984&auto=format&fit=crop"
@@ -841,54 +864,10 @@
           </div>
 
           <!-- Membro 2 -->
-          <div class="fade-up delay-100 group">
+          <div class="zoom-in delay-100 group">
             <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
-                alt="Membro da Equipe"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerpolicy="no-referrer"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
-              >
-                <div class="flex gap-3 text-white">
-                  <i
-                    data-lucide="instagram"
-                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Membro 3 -->
-          <div class="fade-up delay-200 group">
-            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
-              <img
-                src="https://images.unsplash.com/photo-1600878459198-5114b087d956?q=80&w=1974&auto=format&fit=crop"
-                alt="Membro da Equipe"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                referrerpolicy="no-referrer"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
-              >
-                <div class="flex gap-3 text-white">
-                  <i
-                    data-lucide="instagram"
-                    class="w-5 h-5 cursor-pointer hover:text-frio-red transition-colors"
-                  ></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Membro 4 -->
-          <div class="fade-up delay-400 group">
-            <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
-              <img
-                src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?q=80&w=1964&auto=format&fit=crop"
                 alt="Membro da Equipe"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerpolicy="no-referrer"
@@ -909,6 +888,95 @@
       </div>
     </section>
 
+    <!-- Nova Loja -->
+    <section id="nova-loja" class="py-24 px-6 bg-frio-cream">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+          <span
+            class="text-frio-red font-semibold tracking-wider uppercase text-sm mb-4 block"
+            >Expansão</span
+          >
+          <h2 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">
+            Nossa Nova Casa
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            Estamos preparando um espaço incrível para você viver novas
+            experiências com a Frioletta. Confira um spoiler do que vem por aí!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <!-- Foto Principal -->
+          <div
+            class="md:col-span-2 md:row-span-2 fade-up group overflow-hidden rounded-3xl relative min-h-[300px] md:min-h-[600px] cursor-pointer gallery-item"
+          >
+            <div
+              class="absolute inset-0 w-full h-full parallax-wrapper"
+              data-speed="0.1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop"
+                alt="Fachada da Nova Loja"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 scale-105"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8 pointer-events-none"
+            >
+              <p class="text-white font-medium text-xl">
+                Ambiente Aconchegante
+              </p>
+            </div>
+          </div>
+
+          <!-- Foto Menor 1 -->
+          <div
+            class="fade-up delay-100 group overflow-hidden rounded-3xl relative min-h-[200px] md:min-h-[288px] cursor-pointer gallery-item"
+          >
+            <div
+              class="absolute inset-0 w-full h-full parallax-wrapper"
+              data-speed="0.15"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+                alt="Detalhes do Interior"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 scale-105"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none"
+            >
+              <p class="text-white font-medium">Design Moderno</p>
+            </div>
+          </div>
+
+          <!-- Foto Menor 2 -->
+          <div
+            class="fade-up delay-200 group overflow-hidden rounded-3xl relative min-h-[200px] md:min-h-[288px] cursor-pointer gallery-item"
+          >
+            <div
+              class="absolute inset-0 w-full h-full parallax-wrapper"
+              data-speed="0.12"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                alt="Área de Mesas"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 scale-105"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none"
+            >
+              <p class="text-white font-medium">Espaço para Compartilhar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-frio-purple text-white pt-20 pb-10 px-6">
       <div
@@ -923,10 +991,48 @@
             </div>
             <span class="font-display text-3xl tracking-wide">Frioletta</span>
           </div>
-          <p class="text-white/70 max-w-sm text-lg font-light">
+          <p class="text-white/70 max-w-sm text-lg font-light mb-8">
             Onde o verão nunca acaba. Sorvetes, picolés e açaí artesanais feitos
             para despertar alegria.
           </p>
+          <div class="flex items-center gap-4">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-frio-orange hover:-translate-y-1 transition-all"
+              aria-label="Instagram"
+            >
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-frio-orange hover:-translate-y-1 transition-all"
+              aria-label="Facebook"
+            >
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-frio-orange hover:-translate-y-1 transition-all"
+              aria-label="Twitter"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-frio-orange hover:-translate-y-1 transition-all"
+              aria-label="YouTube"
+            >
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+          </div>
         </div>
 
         <div>
@@ -969,8 +1075,22 @@
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="instagram" class="w-4 h-4 text-frio-orange"></i>
-              <a href="#" class="hover:text-white transition-colors"
+              <a
+                href="https://instagram.com/friolettagelato"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white transition-colors"
                 >@friolettagelato</a
+              >
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-frio-orange"></i>
+              <a
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white transition-colors"
+                >(11) 99999-9999</a
               >
             </li>
           </ul>
@@ -1049,6 +1169,50 @@
       </div>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div
+      id="lightbox-modal"
+      class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/95 backdrop-blur-md opacity-0 transition-opacity duration-300"
+    >
+      <button
+        id="close-lightbox"
+        class="absolute top-6 right-6 z-20 text-white/70 hover:text-white transition-colors"
+      >
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+
+      <button
+        id="prev-lightbox"
+        class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
+      >
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+
+      <button
+        id="next-lightbox"
+        class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
+      >
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+
+      <div
+        class="relative w-full max-w-6xl max-h-[90vh] px-4 md:px-16 flex flex-col items-center justify-center transform scale-95 transition-transform duration-300"
+        id="lightbox-content"
+      >
+        <img
+          id="lightbox-img"
+          src=""
+          alt="Galeria"
+          class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+          referrerpolicy="no-referrer"
+        />
+        <p
+          id="lightbox-caption"
+          class="mt-6 text-center text-white/90 font-medium text-lg"
+        ></p>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script>
       // Initialize Lucide Icons
@@ -1072,17 +1236,23 @@
         mobileMenuBackdrop.classList.remove("opacity-0");
         mobileMenuBackdrop.classList.add("opacity-100");
 
-        // Slide in menu
-        mobileMenu.classList.remove("translate-x-full");
-        mobileMenu.classList.add("translate-x-0");
+        // Show menu with fade, scale and slight slide
+        mobileMenu.classList.remove("hidden");
+        void mobileMenu.offsetWidth;
+        mobileMenu.classList.remove("translate-x-8", "opacity-0", "scale-95");
+        mobileMenu.classList.add("translate-x-0", "opacity-100", "scale-100");
 
         document.body.style.overflow = "hidden"; // Prevent scrolling
       }
 
       function closeMenu() {
-        // Slide out menu
-        mobileMenu.classList.remove("translate-x-0");
-        mobileMenu.classList.add("translate-x-full");
+        // Hide menu with fade, scale and slight slide
+        mobileMenu.classList.remove(
+          "translate-x-0",
+          "opacity-100",
+          "scale-100",
+        );
+        mobileMenu.classList.add("translate-x-8", "opacity-0", "scale-95");
 
         // Hide backdrop
         mobileMenuBackdrop.classList.remove("opacity-100");
@@ -1090,6 +1260,7 @@
 
         setTimeout(() => {
           mobileMenuBackdrop.classList.add("hidden");
+          mobileMenu.classList.add("hidden");
           document.body.style.overflow = "";
         }, 300);
       }
@@ -1097,13 +1268,13 @@
       menuBtn.addEventListener("click", openMenu);
 
       closeMenuBtn.addEventListener("click", () => {
-        // Add rotation effect
-        closeIcon.classList.add("rotate-180");
+        // Add subtle rotation and scale effect
+        closeIcon.classList.add("rotate-90", "scale-75", "opacity-50");
         closeMenu();
 
         // Reset rotation after animation finishes
         setTimeout(() => {
-          closeIcon.classList.remove("rotate-180");
+          closeIcon.classList.remove("rotate-90", "scale-75", "opacity-50");
         }, 300);
       });
 
@@ -1130,10 +1301,22 @@
       }, observerOptions);
 
       document
-        .querySelectorAll(".fade-up, .fade-left, .fade-right")
+        .querySelectorAll(".fade-up, .fade-left, .fade-right, .zoom-in")
         .forEach((el) => {
           observer.observe(el);
         });
+
+      // Parallax Effect
+      window.addEventListener("scroll", () => {
+        requestAnimationFrame(() => {
+          const scrolled = window.scrollY;
+          document.querySelectorAll(".parallax-wrapper").forEach((el) => {
+            const speed = el.dataset.speed || 0.1;
+            const yPos = -(scrolled * speed);
+            el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          });
+        });
+      });
 
       // Testimonial Carousel
       const track = document.getElementById("testimonial-track");
@@ -1345,6 +1528,101 @@
 
       closeModalBtn.addEventListener("click", closeModal);
       modalBackdrop.addEventListener("click", closeModal);
+
+      // Lightbox Logic
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const lightboxModal = document.getElementById("lightbox-modal");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const lightboxContent = document.getElementById("lightbox-content");
+      const closeLightboxBtn = document.getElementById("close-lightbox");
+      const prevLightboxBtn = document.getElementById("prev-lightbox");
+      const nextLightboxBtn = document.getElementById("next-lightbox");
+
+      let currentLightboxIndex = 0;
+      let galleryData = [];
+
+      // Initialize gallery data
+      galleryItems.forEach((item) => {
+        const img = item.querySelector("img");
+        const caption = item.querySelector("p").textContent;
+        galleryData.push({ src: img.src, caption: caption });
+      });
+
+      function openLightbox(index) {
+        currentLightboxIndex = index;
+        updateLightboxImage();
+
+        lightboxModal.classList.remove("hidden");
+        lightboxModal.classList.add("flex");
+
+        // Trigger reflow
+        void lightboxModal.offsetWidth;
+
+        lightboxModal.classList.remove("opacity-0");
+        lightboxModal.classList.add("opacity-100");
+        lightboxContent.classList.remove("scale-95");
+        lightboxContent.classList.add("scale-100");
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.remove("opacity-100");
+        lightboxModal.classList.add("opacity-0");
+        lightboxContent.classList.remove("scale-100");
+        lightboxContent.classList.add("scale-95");
+
+        setTimeout(() => {
+          lightboxModal.classList.add("hidden");
+          lightboxModal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      function updateLightboxImage() {
+        const data = galleryData[currentLightboxIndex];
+        lightboxImg.src = data.src;
+        lightboxCaption.textContent = data.caption;
+      }
+
+      function nextLightboxImage() {
+        currentLightboxIndex = (currentLightboxIndex + 1) % galleryData.length;
+        updateLightboxImage();
+      }
+
+      function prevLightboxImage() {
+        currentLightboxIndex =
+          (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
+        updateLightboxImage();
+      }
+
+      galleryItems.forEach((item, index) => {
+        item.addEventListener("click", () => openLightbox(index));
+      });
+
+      closeLightboxBtn?.addEventListener("click", closeLightbox);
+      nextLightboxBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextLightboxImage();
+      });
+      prevLightboxBtn?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevLightboxImage();
+      });
+
+      lightboxModal?.addEventListener("click", (e) => {
+        if (e.target === lightboxModal || e.target === lightboxContent)
+          closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightboxModal.classList.contains("hidden")) {
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowRight") nextLightboxImage();
+          if (e.key === "ArrowLeft") prevLightboxImage();
+        }
+      });
     </script>
   </body>
 </html>
