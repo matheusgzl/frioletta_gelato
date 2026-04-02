@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Galada&family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -26,7 +26,7 @@
               "frio-cream": "#FDFBF7",
             },
             fontFamily: {
-              display: ['"Leckerli One"', "cursive"],
+              display: ['"Galada"', "cursive"],
               sans: ["Outfit", "sans-serif"],
             },
           },
@@ -121,14 +121,14 @@
           <!-- Espaço para a logo da Frioletta Gelato -->
           <!-- Substitua o 'src' abaixo pelo link ou caminho da sua imagem (ex: './logo.png') -->
           <img
-            src="imagens/logo_frioletta.png"
+            src="https://placehold.co/150x50/ffffff/F32232?text=Sua+Logo+Aqui"
             alt="Logo Frioletta Gelato"
             class="h-10 w-auto object-contain rounded"
           />
           <!-- Você pode remover o texto abaixo se a sua imagem de logo já contiver o nome escrito -->
           <span
             class="font-display text-2xl tracking-wide text-white hidden sm:block"
-            >Frioletta Gelato</span
+            >Frioletta</span
           >
         </div>
 
@@ -137,7 +137,7 @@
           <a
             href="#produtos"
             class="text-sm font-medium text-white/90 hover:text-white transition-colors"
-            >Produtos</a
+            >Coleção Frioletta</a
           >
           <a
             href="#essencia"
@@ -197,7 +197,7 @@
           <a
             href="#produtos"
             class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
-            >Produtos</a
+            >Coleção Frioletta</a
           >
           <a
             href="#essencia"
@@ -228,11 +228,11 @@
 
     <!-- Hero Section -->
     <section
-      class="relative min-h-[calc(100svh-72px)] flex flex-col md:flex-row"
+      class="relative h-[calc(75svh-72px)] min-h-[420px] md:h-[calc(100svh-72px)] md:max-h-[450px] lg:max-h-[700px] xl:max-h-none flex flex-col md:flex-row overflow-hidden"
     >
       <!-- Left Content -->
       <div
-        class="w-full md:w-1/2 bg-frio-red flex items-center justify-center p-8 md:p-16 lg:p-24 relative overflow-hidden"
+        class="w-full md:w-1/2 h-full bg-frio-red flex items-center justify-center p-5 sm:p-8 md:p-6 lg:p-16 xl:p-24 relative overflow-hidden"
       >
         <div
           class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
@@ -250,21 +250,35 @@
           </svg>
         </div>
 
-        <div class="relative z-10 text-white max-w-xl fade-left">
+        <div
+          class="relative z-10 text-white max-w-xl fade-left text-center md:text-left flex flex-col items-center md:items-start w-full"
+        >
+          <!-- Espaço para a Logo -->
+          <div class="mb-4 sm:mb-5 w-32 sm:w-40 shrink-0 md:hidden">
+            <!-- Substitua o src abaixo pelo caminho da sua logo (ex: /assets/logo.png) -->
+            <img
+              src="https://placehold.co/400x150/transparent/ffffff?text=Sua+Logo+Aqui"
+              alt="Frioletta Gelato Logo"
+              class="w-full h-auto object-contain drop-shadow-sm"
+            />
+          </div>
+
           <h1
-            class="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.9] mb-8 drop-shadow-sm"
+            class="font-display text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-7xl leading-[0.9] mb-3 sm:mb-4 drop-shadow-sm"
           >
             Onde o<br />verão<br />nunca acaba
           </h1>
-          <p class="text-lg md:text-xl font-light opacity-90 mb-10 max-w-md">
+          <p
+            class="text-sm sm:text-base md:text-sm lg:text-base xl:text-lg font-light opacity-90 mb-5 sm:mb-6 max-w-md"
+          >
             Um convite para viver momentos leves e felizes, onde o sabor
             refresca e a experiência acolhe.
           </p>
-          <div class="flex gap-4">
+          <div class="flex gap-4 justify-center md:justify-start shrink-0">
             <button
-              class="bg-white text-frio-red px-8 py-4 rounded-full font-semibold hover:bg-frio-cream transition-colors flex items-center gap-2 group"
+              class="bg-white text-frio-red px-6 py-3 sm:px-8 sm:py-4 md:px-5 md:py-2.5 lg:px-8 lg:py-4 rounded-full text-base sm:text-lg md:text-sm lg:text-base font-semibold hover:bg-frio-cream transition-colors flex items-center gap-2 group"
             >
-              Descubra os Sabores
+              Descubra a Coleção
               <i
                 data-lucide="arrow-right"
                 class="w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -275,7 +289,9 @@
       </div>
 
       <!-- Right Image -->
-      <div class="w-full md:w-1/2 h-[60vh] md:h-auto relative overflow-hidden">
+      <div
+        class="hidden md:block w-full md:w-1/2 h-[45%] md:h-full relative overflow-hidden"
+      >
         <div
           class="absolute top-[-60vh] left-0 w-full h-[160vh] parallax-wrapper"
           data-speed="-0.6"
@@ -355,192 +371,247 @@
     </section>
 
     <!-- Products Showcase -->
-    <section id="produtos" class="py-24 px-6 bg-frio-cream">
-      <div class="max-w-7xl mx-auto">
+    <section
+      id="produtos"
+      class="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-[#fdfbf7] via-[#fff5f5] to-[#fff0e6]"
+    >
+      <!-- Ambient Glows -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+      >
         <div
-          class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6"
+          class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-frio-purple/5 blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-frio-orange/5 blur-3xl"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8"
         >
-          <div class="fade-up">
-            <h2 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">
-              Nossos Sabores
+          <div class="fade-up max-w-2xl">
+            <span
+              class="text-frio-red font-medium tracking-wider uppercase text-sm mb-4 block"
+              >Produção artesanal em pequenos lotes</span
+            >
+            <h2
+              class="font-display text-5xl md:text-7xl text-gray-900 mb-6 leading-tight"
+            >
+              Coleção Frioletta
             </h2>
-            <p class="text-gray-600 text-lg max-w-md">
-              Receitas artesanais pensadas para despertar alegria em cada
-              detalhe.
+            <p
+              class="text-gray-600 text-xl md:text-2xl font-light leading-relaxed"
+            >
+              Na Frioletta, cada criação é pensada para ir além do sabor. É
+              textura, é aroma, é sensação. Uma experiência que começa no
+              primeiro olhar e fica na memória.
             </p>
           </div>
-          <button
-            class="text-frio-red font-semibold flex items-center gap-2 hover:gap-4 transition-all"
-          >
-            Ver cardápio completo
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </button>
         </div>
 
         <div class="relative overflow-hidden px-4 -mx-4" id="flavors-carousel">
           <div
-            class="flex transition-transform duration-700 ease-in-out h-[300px] lg:h-[400px]"
+            class="flex transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] h-[500px] lg:h-[650px]"
             id="flavors-track"
           >
-            <!-- Açaí -->
+            <!-- Item 1: Pistache -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                data-product="acai"
+                class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(255,107,107,0.3)]"
+                data-product="pistache"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1590137876181-2a5a7e340308?q=80&w=1932&auto=format&fit=crop"
-                  alt="Tigela de Açaí"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://images.unsplash.com/photo-1556708236-0ce41f94a4b6?q=80&w=1974&auto=format&fit=crop"
+                  alt="Pistache Siciliano"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-frio-purple/90 via-frio-purple/20 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"
                 ></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                  <span
-                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                <div
+                  class="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-4"
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-wider uppercase border border-white/20"
+                    >
+                      Mais pedido
+                    </span>
+                    <span class="text-white/80 text-sm font-light"
+                      >Gelato Artesanal</span
+                    >
+                  </div>
+                  <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
+                    Pistache Siciliano
+                  </h3>
+                  <p
+                    class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
                   >
-                    Energia Natural
-                  </span>
-                  <h3 class="font-display text-5xl text-white mb-2">Açaí</h3>
-                  <p class="text-white/90 font-light">
-                    Cremoso, refrescante e do seu jeito.
+                    Cremoso, intenso e levemente tostado.
                   </p>
+                  <div
+                    class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
+                  >
+                    <span>Ver experiência</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Sorvete -->
+            <!-- Item 2: Chocolate -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
-                class="relative rounded-3xl overflow-hidden group h-full zoom-in delay-200 cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                data-product="sorvete"
+                class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(108,92,231,0.3)]"
+                data-product="chocolate"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1570197781417-0a5237500ee3?q=80&w=2070&auto=format&fit=crop"
+                  alt="Chocolate Intenso 70%"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"
+                ></div>
+                <div
+                  class="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-4"
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="inline-block px-4 py-1.5 bg-frio-purple/80 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-wider uppercase border border-white/20"
+                    >
+                      Exclusivo
+                    </span>
+                    <span class="text-white/80 text-sm font-light"
+                      >Gelato Artesanal</span
+                    >
+                  </div>
+                  <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
+                    Chocolate Intenso 70%
+                  </h3>
+                  <p
+                    class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
+                  >
+                    Notas profundas de cacau com final marcante.
+                  </p>
+                  <div
+                    class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
+                  >
+                    <span>Ver experiência</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Frutas Vermelhas -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(253,203,110,0.3)]"
+                data-product="frutas"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop"
+                  alt="Frutas Vermelhas Selvagens"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"
+                ></div>
+                <div
+                  class="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-4"
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="inline-block px-4 py-1.5 bg-frio-orange/80 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-wider uppercase border border-white/20"
+                    >
+                      Edição Limitada
+                    </span>
+                    <span class="text-white/80 text-sm font-light"
+                      >Picolé Premium</span
+                    >
+                  </div>
+                  <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
+                    Frutas Vermelhas Selvagens
+                  </h3>
+                  <p
+                    class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
+                  >
+                    Frescor vibrante e acidez perfeitamente equilibrada.
+                  </p>
+                  <div
+                    class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
+                  >
+                    <span>Ver experiência</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Baunilha -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(255,107,107,0.3)]"
+                data-product="baunilha"
               >
                 <img
                   src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop"
-                  alt="Sorvete Artesanal"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Baunilha Bourbon"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-frio-red/90 via-frio-red/20 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"
                 ></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                  <span
-                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
-                  >
-                    Artesanal
-                  </span>
-                  <h3 class="font-display text-5xl text-white mb-2">Sorvete</h3>
-                  <p class="text-white/90 font-light">
-                    Um pedaço de verão em cada mordida.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Picolé -->
-            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
-              <div
-                class="relative rounded-3xl overflow-hidden group h-full zoom-in delay-400 cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                data-product="picole"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2070&auto=format&fit=crop"
-                  alt="Picolé de Frutas"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerpolicy="no-referrer"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-frio-orange/90 via-frio-orange/20 to-transparent"
-                ></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                  <span
-                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
-                  >
-                    Refrescante
-                  </span>
-                  <h3 class="font-display text-5xl text-white mb-2">Picolé</h3>
-                  <p class="text-white/90 font-light">
-                    A praticidade de ser feliz em qualquer lugar.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Milkshake -->
-            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
-              <div
-                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                data-product="milkshake"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1974&auto=format&fit=crop"
-                  alt="Milkshake Cremoso"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerpolicy="no-referrer"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-frio-purple/90 via-frio-purple/20 to-transparent"
-                ></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                  <span
-                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
-                  >
-                    Clássico
-                  </span>
-                  <h3 class="font-display text-5xl text-white mb-2">
-                    Milkshake
+                  class="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-4"
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-wider uppercase border border-white/20"
+                    >
+                      Seleção da Casa
+                    </span>
+                    <span class="text-white/80 text-sm font-light"
+                      >Criações Sazonais</span
+                    >
+                  </div>
+                  <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
+                    Baunilha Bourbon
                   </h3>
-                  <p class="text-white/90 font-light">
-                    A combinação perfeita batida na hora.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sundae -->
-            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
-              <div
-                class="relative rounded-3xl overflow-hidden group h-full zoom-in cursor-pointer product-card transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                data-product="sundae"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1974&auto=format&fit=crop"
-                  alt="Sundae Especial"
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  referrerpolicy="no-referrer"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-frio-red/90 via-frio-red/20 to-transparent"
-                ></div>
-                <div class="absolute bottom-0 left-0 p-8 w-full">
-                  <span
-                    class="inline-block px-4 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-sm font-medium mb-3 border border-white/30"
+                  <p
+                    class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
                   >
-                    Indulgente
-                  </span>
-                  <h3 class="font-display text-5xl text-white mb-2">Sundae</h3>
-                  <p class="text-white/90 font-light">
-                    Camadas de sabor e texturas incríveis.
+                    Suave, delicado e profundamente envolvente.
                   </p>
+                  <div
+                    class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
+                  >
+                    <span>Ver experiência</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Flavors Controls -->
-          <div class="flex justify-center gap-4 mt-8">
+          <div class="flex justify-center gap-4 mt-12">
             <button
               id="prev-flavor"
-              class="w-12 h-12 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
+              class="w-14 h-14 rounded-full border border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
             >
               <i data-lucide="chevron-left" class="w-6 h-6"></i>
             </button>
             <button
               id="next-flavor"
-              class="w-12 h-12 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
+              class="w-14 h-14 rounded-full border border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
             >
               <i data-lucide="chevron-right" class="w-6 h-6"></i>
             </button>
@@ -1040,7 +1111,7 @@
           <ul class="space-y-4 text-white/70 font-light">
             <li>
               <a href="#produtos" class="hover:text-white transition-colors"
-                >Nossos Sabores</a
+                >Coleção Frioletta</a
               >
             </li>
             <li>
@@ -1155,7 +1226,7 @@
               class="font-semibold text-gray-900 mb-3 flex items-center gap-2"
             >
               <i data-lucide="sparkles" class="w-4 h-4 text-frio-orange"></i>
-              Sabores Populares
+              Categoria
             </h4>
             <p id="modal-flavors" class="text-gray-600 font-light"></p>
           </div>
@@ -1163,7 +1234,7 @@
           <button
             class="bg-frio-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors w-full md:w-auto text-center shadow-lg shadow-frio-red/20 active:scale-95"
           >
-            Pedir Agora
+            Vivenciar Experiência
           </button>
         </div>
       </div>
@@ -1432,42 +1503,33 @@
 
       // Product Modal Logic
       const productData = {
-        acai: {
-          title: "Açaí",
-          tag: "Energia Natural",
-          desc: "Cremoso, refrescante e do seu jeito. Nosso açaí é batido na hora, garantindo a textura perfeita e o sabor autêntico da Amazônia. Escolha seus acompanhamentos favoritos e monte a tigela dos seus sonhos.",
-          flavors: "Tradicional, Zero Açúcar, Com Morango, Com Banana",
-          img: "https://images.unsplash.com/photo-1590137876181-2a5a7e340308?q=80&w=1932&auto=format&fit=crop",
+        pistache: {
+          title: "Pistache Siciliano",
+          tag: "Mais pedido",
+          desc: "Uma viagem sensorial à Sicília. Nosso gelato de pistache é elaborado com grãos selecionados e levemente tostados, garantindo uma cremosidade rica e um sabor autêntico e intenso que preenche o paladar.",
+          flavors: "Gelato Artesanal",
+          img: "https://images.unsplash.com/photo-1556708236-0ce41f94a4b6?q=80&w=1974&auto=format&fit=crop",
         },
-        sorvete: {
-          title: "Sorvete Artesanal",
-          tag: "Artesanal",
-          desc: "Um pedaço de verão em cada mordida. Produzidos diariamente com ingredientes frescos e selecionados, nossos gelatos oferecem uma cremosidade inigualável e um sabor que abraça.",
-          flavors:
-            "Pistache, Chocolate Belga, Morango com Manjericão, Doce de Leite, Baunilha de Madagascar",
+        chocolate: {
+          title: "Chocolate Intenso 70%",
+          tag: "Exclusivo",
+          desc: "Para os verdadeiros apreciadores de cacau. Uma textura aveludada que derrete lentamente, revelando notas profundas, complexas e um final marcante que ecoa a pureza do chocolate amargo.",
+          flavors: "Gelato Artesanal",
+          img: "https://images.unsplash.com/photo-1570197781417-0a5237500ee3?q=80&w=2070&auto=format&fit=crop",
+        },
+        frutas: {
+          title: "Frutas Vermelhas Selvagens",
+          tag: "Edição Limitada",
+          desc: "A essência do frescor capturada em um picolé premium. Uma combinação vibrante de morangos, framboesas e amoras, oferecendo uma acidez perfeitamente equilibrada com a doçura natural das frutas.",
+          flavors: "Picolé Premium",
+          img: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop",
+        },
+        baunilha: {
+          title: "Baunilha Bourbon",
+          tag: "Seleção da Casa",
+          desc: "O clássico elevado à sua forma mais pura. Infusionado com favas de baunilha Bourbon de Madagascar, este gelato é suave, delicado e profundamente envolvente, com pontinhos pretos que atestam sua pureza.",
+          flavors: "Criações Sazonais",
           img: "https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop",
-        },
-        picole: {
-          title: "Picolé",
-          tag: "Refrescante",
-          desc: "A praticidade de ser feliz em qualquer lugar. Picolés recheados e de frutas, feitos com água de coco ou leite fresco. A opção perfeita para os dias mais quentes do ano.",
-          flavors:
-            "Limão Siciliano, Morango com Leite Condensado, Coco Queimado, Maracujá, Uva",
-          img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2070&auto=format&fit=crop",
-        },
-        milkshake: {
-          title: "Milkshake",
-          tag: "Clássico",
-          desc: "A combinação perfeita de sorvete artesanal e leite, batido na textura ideal. Uma bebida cremosa, gelada e extremamente saborosa para acompanhar qualquer momento.",
-          flavors: "Ovomaltine, Morango, Chocolate, Baunilha, Nutella",
-          img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1974&auto=format&fit=crop",
-        },
-        sundae: {
-          title: "Sundae",
-          tag: "Indulgente",
-          desc: "Camadas de sabor com nosso gelato, caldas artesanais quentinhas e toppings crocantes. A sobremesa perfeita para quem quer uma experiência completa.",
-          flavors: "Caramelo Salgado, Chocolate Quente, Frutas Vermelhas",
-          img: "https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1974&auto=format&fit=crop",
         },
       };
 
