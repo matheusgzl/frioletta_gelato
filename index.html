@@ -115,20 +115,20 @@
   </head>
   <body class="font-sans selection:bg-frio-red selection:text-white">
     <!-- Navbar -->
-    <nav class="sticky top-0 w-full z-50 bg-frio-red shadow-sm py-4">
+    <nav class="sticky top-0 w-full z-50 bg-frio-red shadow-sm py-2">
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div class="flex items-center gap-3">
           <!-- Espaço para a logo da Frioletta Gelato -->
           <!-- Substitua o 'src' abaixo pelo link ou caminho da sua imagem (ex: './logo.png') -->
           <img
-            src="https://placehold.co/150x50/ffffff/F32232?text=Sua+Logo+Aqui"
+            src="imagens/logo_transparente.png"
             alt="Logo Frioletta Gelato"
-            class="h-10 w-auto object-contain rounded"
+            class="h-15 sm:h-20 w-auto object-contain rounded"
           />
           <!-- Você pode remover o texto abaixo se a sua imagem de logo já contiver o nome escrito -->
           <span
             class="font-display text-2xl tracking-wide text-white hidden sm:block"
-            >Frioletta</span
+            >Frioletta Gelato</span
           >
         </div>
 
@@ -225,7 +225,6 @@
         </div>
       </div>
     </nav>
-
     <!-- Hero Section -->
     <section
       class="relative h-[calc(75svh-72px)] min-h-[420px] md:h-[calc(100svh-72px)] md:max-h-[450px] lg:max-h-[700px] xl:max-h-none flex flex-col md:flex-row overflow-hidden"
@@ -293,13 +292,13 @@
         class="hidden md:block w-full md:w-1/2 h-[45%] md:h-full relative overflow-hidden"
       >
         <div
-          class="absolute top-[-60vh] left-0 w-full h-[160vh] parallax-wrapper"
+          class="absolute top-[-60vh] left-0 w-full h-[190vh] parallax-wrapper"
           data-speed="-0.6"
         >
           <img
-            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop"
+            src="imagens/moca_com_sorvete_.png"
             alt="Mulher sorrindo tomando sorvete no verão"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-contain"
             referrerpolicy="no-referrer"
           />
         </div>
@@ -423,7 +422,7 @@
                 data-product="pistache"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1556708236-0ce41f94a4b6?q=80&w=1974&auto=format&fit=crop"
+                  src="imagens/IMG_1303.JPG.jpeg"
                   alt="Pistache Siciliano"
                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
@@ -445,7 +444,7 @@
                     >
                   </div>
                   <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
-                    Pistache Siciliano
+                    Pistache Premium
                   </h3>
                   <p
                     class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
@@ -469,7 +468,7 @@
                 data-product="chocolate"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1570197781417-0a5237500ee3?q=80&w=2070&auto=format&fit=crop"
+                  src="imagens/IMG_1298.JPG.jpeg"
                   alt="Chocolate Intenso 70%"
                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
@@ -508,15 +507,15 @@
               </div>
             </div>
 
-            <!-- Item 3: Frutas Vermelhas -->
+            <!-- Item 3: Sensação -->
             <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
               <div
                 class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(253,203,110,0.3)]"
                 data-product="frutas"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop"
-                  alt="Frutas Vermelhas Selvagens"
+                  src="imagens/IMG_1295.JPG.jpeg"
+                  alt="Sensação"
                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
                 />
@@ -537,7 +536,7 @@
                     >
                   </div>
                   <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
-                    Frutas Vermelhas Selvagens
+                    Sensação
                   </h3>
                   <p
                     class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
@@ -561,7 +560,7 @@
                 data-product="baunilha"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop"
+                  src="imagens/IMG_1297.JPG.jpeg"
                   alt="Baunilha Bourbon"
                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerpolicy="no-referrer"
@@ -725,36 +724,71 @@
             <!-- Testimonial 1 -->
             <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
               <div
-                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
               >
-                <div class="flex gap-1 text-frio-orange mb-6">
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                </div>
-                <p
-                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                <video
+                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                  loop
+                  playsinline
+                  muted
+                ></video>
+
+                <!-- Center Play Button -->
+                <button
+                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
                 >
-                  "O melhor gelato de pistache que já provei! O ambiente é super
-                  acolhedor e o atendimento impecável. Com certeza voltarei mais
-                  vezes para provar os outros sabores."
-                </p>
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
+                  <i
+                    data-lucide="pause"
+                    class="w-10 h-10 hidden pause-icon"
+                  ></i>
+                </button>
+
+                <!-- Video Controls -->
+                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+                  <button
+                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
-                      alt="Mariana Silva"
-                      class="w-full h-full object-cover"
-                      referrerpolicy="no-referrer"
-                    />
+                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
+                    <i
+                      data-lucide="volume-2"
+                      class="w-4 h-4 hidden unmute-icon"
+                    ></i>
+                  </button>
+                </div>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
+                ></div>
+
+                <!-- Content -->
+                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
+                  <div class="flex gap-1 text-frio-orange mb-4">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                   </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-900">Mariana Silva</h4>
-                    <p class="text-sm text-gray-500">Cliente Fiel</p>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
+                        alt="Mariana Silva"
+                        class="w-full h-full object-cover"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">
+                        Mariana Silva
+                      </h4>
+                      <p class="text-xs text-white/70">Cliente Fiel</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -763,36 +797,71 @@
             <!-- Testimonial 2 -->
             <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
               <div
-                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
               >
-                <div class="flex gap-1 text-frio-orange mb-6">
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                </div>
-                <p
-                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                <video
+                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                  loop
+                  playsinline
+                  muted
+                ></video>
+
+                <!-- Center Play Button -->
+                <button
+                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
                 >
-                  "Açaí perfeito, no ponto certo e com acompanhamentos frescos.
-                  As crianças adoraram os picolés de frutas. Virou nosso passeio
-                  de domingo oficial!"
-                </p>
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
+                  <i
+                    data-lucide="pause"
+                    class="w-10 h-10 hidden pause-icon"
+                  ></i>
+                </button>
+
+                <!-- Video Controls -->
+                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+                  <button
+                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-                      alt="Carlos Mendes"
-                      class="w-full h-full object-cover"
-                      referrerpolicy="no-referrer"
-                    />
+                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
+                    <i
+                      data-lucide="volume-2"
+                      class="w-4 h-4 hidden unmute-icon"
+                    ></i>
+                  </button>
+                </div>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
+                ></div>
+
+                <!-- Content -->
+                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
+                  <div class="flex gap-1 text-frio-orange mb-4">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                   </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-900">Carlos Mendes</h4>
-                    <p class="text-sm text-gray-500">Pai de Gêmeos</p>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+                        alt="Carlos Mendes"
+                        class="w-full h-full object-cover"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">
+                        Carlos Mendes
+                      </h4>
+                      <p class="text-xs text-white/70">Pai de Gêmeos</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -801,36 +870,71 @@
             <!-- Testimonial 3 -->
             <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
               <div
-                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
               >
-                <div class="flex gap-1 text-frio-orange mb-6">
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                </div>
-                <p
-                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                <video
+                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                  loop
+                  playsinline
+                  muted
+                ></video>
+
+                <!-- Center Play Button -->
+                <button
+                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
                 >
-                  "Sou apaixonada pela textura dos gelatos. Dá pra sentir que é
-                  feito com ingredientes de verdade. O de morango com manjericão
-                  é uma surpresa maravilhosa!"
-                </p>
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
+                  <i
+                    data-lucide="pause"
+                    class="w-10 h-10 hidden pause-icon"
+                  ></i>
+                </button>
+
+                <!-- Video Controls -->
+                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+                  <button
+                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
-                      alt="Ana Beatriz"
-                      class="w-full h-full object-cover"
-                      referrerpolicy="no-referrer"
-                    />
+                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
+                    <i
+                      data-lucide="volume-2"
+                      class="w-4 h-4 hidden unmute-icon"
+                    ></i>
+                  </button>
+                </div>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
+                ></div>
+
+                <!-- Content -->
+                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
+                  <div class="flex gap-1 text-frio-orange mb-4">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                   </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-900">Ana Beatriz</h4>
-                    <p class="text-sm text-gray-500">Foodie</p>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+                        alt="Ana Beatriz"
+                        class="w-full h-full object-cover"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">
+                        Ana Beatriz
+                      </h4>
+                      <p class="text-xs text-white/70">Foodie</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -839,36 +943,71 @@
             <!-- Testimonial 4 -->
             <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
               <div
-                class="bg-frio-cream p-8 rounded-3xl h-full flex flex-col shadow-sm border border-orange-50"
+                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
               >
-                <div class="flex gap-1 text-frio-orange mb-6">
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                  <i data-lucide="star" class="w-5 h-5 text-gray-300"></i>
-                </div>
-                <p
-                  class="text-gray-700 italic mb-8 flex-grow text-lg leading-relaxed"
+                <video
+                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+                  loop
+                  playsinline
+                  muted
+                ></video>
+
+                <!-- Center Play Button -->
+                <button
+                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
                 >
-                  "Lugar lindo, super instagramável e os sabores são bem
-                  autênticos. O delivery também funciona super bem, chega tudo
-                  geladinho."
-                </p>
-                <div class="flex items-center gap-4">
-                  <div
-                    class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm"
+                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
+                  <i
+                    data-lucide="pause"
+                    class="w-10 h-10 hidden pause-icon"
+                  ></i>
+                </button>
+
+                <!-- Video Controls -->
+                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+                  <button
+                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
-                      alt="Rafael Costa"
-                      class="w-full h-full object-cover"
-                      referrerpolicy="no-referrer"
-                    />
+                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
+                    <i
+                      data-lucide="volume-2"
+                      class="w-4 h-4 hidden unmute-icon"
+                    ></i>
+                  </button>
+                </div>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
+                ></div>
+
+                <!-- Content -->
+                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
+                  <div class="flex gap-1 text-frio-orange mb-4">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 text-white/30"></i>
                   </div>
-                  <div>
-                    <h4 class="font-semibold text-gray-900">Rafael Costa</h4>
-                    <p class="text-sm text-gray-500">Designer</p>
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                        alt="Rafael Costa"
+                        class="w-full h-full object-cover"
+                        referrerpolicy="no-referrer"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white text-sm">
+                        Rafael Costa
+                      </h4>
+                      <p class="text-xs text-white/70">Designer</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -899,7 +1038,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 fade-up">
           <h2 class="font-display text-5xl md:text-6xl text-gray-900 mb-4">
-            Nossa Equipe
+            Quem faz acontecer
           </h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">
             Conheça as pessoas apaixonadas por trás de cada sabor e sorriso na
@@ -912,7 +1051,7 @@
           <div class="zoom-in group">
             <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
               <img
-                src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1984&auto=format&fit=crop"
+                src="imagens/donos.jpeg"
                 alt="Membro da Equipe"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerpolicy="no-referrer"
@@ -938,7 +1077,7 @@
           <div class="zoom-in delay-100 group">
             <div class="relative overflow-hidden rounded-3xl aspect-[4/5] mb-4">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                src="imagens/equipe.jpeg"
                 alt="Membro da Equipe"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 referrerpolicy="no-referrer"
@@ -1684,6 +1823,53 @@
           if (e.key === "ArrowRight") nextLightboxImage();
           if (e.key === "ArrowLeft") prevLightboxImage();
         }
+      });
+
+      // Testimonial Video Controls
+      const videoCards = document.querySelectorAll(".testimonial-video");
+
+      videoCards.forEach((video) => {
+        const card = video.closest(".group");
+        const playPauseBtn = card.querySelector(".play-pause-btn");
+        const muteBtn = card.querySelector(".mute-btn");
+
+        const playIcon = playPauseBtn.querySelector(".play-icon");
+        const pauseIcon = playPauseBtn.querySelector(".pause-icon");
+        const muteIcon = muteBtn.querySelector(".mute-icon");
+        const unmuteIcon = muteBtn.querySelector(".unmute-icon");
+
+        playPauseBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (video.paused) {
+            video.play();
+            playIcon.classList.add("hidden");
+            pauseIcon.classList.remove("hidden");
+            playPauseBtn.classList.add("opacity-0", "pointer-events-none");
+          } else {
+            video.pause();
+            playIcon.classList.remove("hidden");
+            pauseIcon.classList.add("hidden");
+            playPauseBtn.classList.remove("opacity-0", "pointer-events-none");
+          }
+        });
+
+        muteBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (video.muted) {
+            video.muted = false;
+            muteIcon.classList.add("hidden");
+            unmuteIcon.classList.remove("hidden");
+          } else {
+            video.muted = true;
+            muteIcon.classList.remove("hidden");
+            unmuteIcon.classList.add("hidden");
+          }
+        });
+
+        // Optional: Play/pause on video click
+        video.addEventListener("click", () => {
+          playPauseBtn.click();
+        });
       });
     </script>
   </body>
