@@ -117,7 +117,11 @@
     <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-frio-red shadow-sm py-2">
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" class="flex items-center gap-3 hover:opacity-90 transition-opacity" aria-label="Ir para o início">
+        <a
+          href="#"
+          class="flex items-center gap-3 hover:opacity-90 transition-opacity"
+          aria-label="Ir para o início"
+        >
           <!-- Espaço para a logo da Frioletta Gelato -->
           <!-- Substitua o 'src' abaixo pelo link ou caminho da sua imagem (ex: './logo.png') -->
           <img
@@ -135,14 +139,14 @@
         <!-- Desktop Nav -->
         <div class="hidden lg:flex items-center gap-8">
           <a
-            href="#produtos"
-            class="text-sm font-medium text-white/90 hover:text-white transition-colors"
-            >Coleção Frioletta</a
-          >
-          <a
             href="#essencia"
             class="text-sm font-medium text-white/90 hover:text-white transition-colors"
             >Nossa Essência</a
+          >
+          <a
+            href="#produtos"
+            class="text-sm font-medium text-white/90 hover:text-white transition-colors"
+            >Coleção Frioletta</a
           >
           <a
             href="#experiencia"
@@ -195,14 +199,14 @@
         </div>
         <div class="flex flex-col gap-6 p-8">
           <a
-            href="#produtos"
-            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
-            >Coleção Frioletta</a
-          >
-          <a
             href="#essencia"
             class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
             >Nossa Essência</a
+          >
+          <a
+            href="#produtos"
+            class="mobile-link text-xl font-medium text-gray-800 hover:text-frio-red transition-colors"
+            >Coleção Frioletta</a
           >
           <a
             href="#experiencia"
@@ -292,13 +296,13 @@
         class="hidden md:block w-full md:w-1/2 h-[45%] md:h-full relative overflow-hidden"
       >
         <div
-          class="absolute top-[-60vh] left-0 w-full h-[190vh] parallax-wrapper"
+          class="absolute top-[-5vh] left-0 w-full h-[90vh] parallax-wrapper"
           data-speed="-0.6"
         >
           <img
-            src="imagens/moca_com_sorvete_.png"
+            src="imagens/acai_copo.png"
             alt="Mulher sorrindo tomando sorvete no verão"
-            class="w-full h-full object-contain"
+            class="w-full h-full object-cover"
             referrerpolicy="no-referrer"
           />
         </div>
@@ -542,6 +546,52 @@
                     class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
                   >
                     Frescor vibrante e acidez perfeitamente equilibrada.
+                  </p>
+                  <div
+                    class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
+                  >
+                    <span>Ver experiência</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Açaí -->
+            <div class="w-full flex-shrink-0 px-3 md:w-1/2 lg:w-1/3 h-full">
+              <div
+                class="relative rounded-[2rem] overflow-hidden group h-full cursor-pointer product-card transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(108,92,231,0.3)]"
+                data-product="acai"
+              >
+                <img
+                  src="imagens/acai_copo.png"
+                  alt="Açaí Tradicional"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  referrerpolicy="no-referrer"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"
+                ></div>
+                <div
+                  class="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-4"
+                >
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="inline-block px-4 py-1.5 bg-frio-purple/80 backdrop-blur-md rounded-full text-white text-xs font-medium tracking-wider uppercase border border-white/20"
+                    >
+                      Energia
+                    </span>
+                    <span class="text-white/80 text-sm font-light"
+                      >Açaí Premium</span
+                    >
+                  </div>
+                  <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
+                    Açaí Tradicional
+                  </h3>
+                  <p
+                    class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
+                  >
+                    Puro, refrescante e cheio de energia para o seu dia.
                   </p>
                   <div
                     class="flex items-center gap-2 text-white font-medium opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-200"
@@ -1233,7 +1283,11 @@
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <a href="https://maps.app.goo.gl/kPi6ABJ7oLfjbb8V8" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://maps.app.goo.gl/kPi6ABJ7oLfjbb8V8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>Avenida Paschoal Ardito, 1259, Americana, Sao Paulo</span>
               </a>
             </li>
@@ -1354,11 +1408,13 @@
             <p id="modal-flavors" class="text-gray-600 font-light"></p>
           </div>
 
-          <button
-            class="bg-frio-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors w-full md:w-auto text-center shadow-lg shadow-frio-red/20 active:scale-95"
-          >
-            Vivenciar Experiência
-          </button>
+          <a href="https://www.ifood.com.br/delivery/americana-sp/soul-tropical--av-paschoal-ardito-vila-belvedere/630011cb-eb82-41e5-8874-4b4e6213bcff" target="_blank" rel="noopener noreferrer">
+            <button
+              class="bg-frio-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors w-full md:w-auto text-center shadow-lg shadow-frio-red/20 active:scale-95"
+            >
+              Vivenciar Experiência
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -1564,43 +1620,87 @@
 
       if (flavorsTrack) {
         let fIndex = 0;
-        const fItems = flavorsTrack.children;
-        const fTotal = fItems.length;
+        let isTransitioning = false;
+        const originalItems = Array.from(flavorsTrack.children);
+        const fTotal = originalItems.length;
         let flavorInterval;
 
-        function updateFlavorsCarousel() {
-          let ipv = 1;
-          if (window.innerWidth >= 1024) ipv = 3;
-          else if (window.innerWidth >= 768) ipv = 2;
+        // Clone items for infinite loop
+        originalItems.forEach((item) => {
+          const clone = item.cloneNode(true);
+          flavorsTrack.appendChild(clone);
+        });
 
-          const max = Math.max(0, fTotal - ipv);
-          if (fIndex > max) fIndex = 0;
-          if (fIndex < 0) fIndex = max;
+        function getItemsPerView() {
+          if (window.innerWidth >= 1024) return 3;
+          if (window.innerWidth >= 768) return 2;
+          return 1;
+        }
 
-          const pct = -(fIndex * (100 / ipv));
-          flavorsTrack.style.transform = `translateX(${pct}%)`;
+        function updateFlavorsCarousel(animate = true) {
+          const ipv = getItemsPerView();
+          const itemWidth = 100 / ipv;
+
+          if (!animate) {
+            flavorsTrack.style.transition = "none";
+          } else {
+            flavorsTrack.style.transition =
+              "transform 1000ms cubic-bezier(0.25, 1, 0.5, 1)";
+          }
+
+          flavorsTrack.style.transform = `translateX(-${fIndex * itemWidth}%)`;
+
+          if (!animate) {
+            // Force reflow
+            void flavorsTrack.offsetWidth;
+          }
         }
 
         function nextFlavor() {
-          let ipv = 1;
-          if (window.innerWidth >= 1024) ipv = 3;
-          else if (window.innerWidth >= 768) ipv = 2;
+          if (isTransitioning) return;
+          isTransitioning = true;
 
-          const max = Math.max(0, fTotal - ipv);
           fIndex++;
-          if (fIndex > max) fIndex = 0;
           updateFlavorsCarousel();
+
+          // Check if we reached the end of original items
+          if (fIndex >= fTotal) {
+            setTimeout(() => {
+              fIndex = 0;
+              updateFlavorsCarousel(false);
+              isTransitioning = false;
+            }, 1000); // Match transition duration
+          } else {
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 1000);
+          }
         }
 
         function prevFlavor() {
-          let ipv = 1;
-          if (window.innerWidth >= 1024) ipv = 3;
-          else if (window.innerWidth >= 768) ipv = 2;
+          if (isTransitioning) return;
+          isTransitioning = true;
 
-          const max = Math.max(0, fTotal - ipv);
-          fIndex--;
-          if (fIndex < 0) fIndex = max;
-          updateFlavorsCarousel();
+          if (fIndex === 0) {
+            // Jump to the cloned set first without animation
+            fIndex = fTotal;
+            updateFlavorsCarousel(false);
+
+            // Then animate to the previous item
+            setTimeout(() => {
+              fIndex--;
+              updateFlavorsCarousel(true);
+              setTimeout(() => {
+                isTransitioning = false;
+              }, 1000);
+            }, 50);
+          } else {
+            fIndex--;
+            updateFlavorsCarousel();
+            setTimeout(() => {
+              isTransitioning = false;
+            }, 1000);
+          }
         }
 
         function resetFlavorInterval() {
@@ -1619,8 +1719,20 @@
           });
         }
 
-        window.addEventListener("resize", updateFlavorsCarousel);
-        updateFlavorsCarousel();
+        // Pause on hover
+        flavorsTrack.addEventListener("mouseenter", () =>
+          clearInterval(flavorInterval),
+        );
+        flavorsTrack.addEventListener("mouseleave", () => {
+          resetFlavorInterval();
+        });
+
+        window.addEventListener("resize", () => {
+          updateFlavorsCarousel(false);
+        });
+
+        // Initialize
+        updateFlavorsCarousel(false);
         flavorInterval = setInterval(nextFlavor, 4000); // Auto-play every 4s
       }
 
@@ -1653,6 +1765,13 @@
           desc: "O clássico elevado à sua forma mais pura. Infusionado com favas de baunilha Bourbon de Madagascar, este gelato é suave, delicado e profundamente envolvente, com pontinhos pretos que atestam sua pureza.",
           flavors: "Criações Sazonais",
           img: "imagens/IMG_1297.JPG.jpeg",
+        },
+        acai: {
+          title: "Açaí Tradicional",
+          tag: "Energia",
+          desc: "Puro, refrescante e cheio de energia para o seu dia. Nosso açaí premium é preparado com a polpa mais pura, garantindo uma textura aveludada e um sabor autêntico da Amazônia.",
+          flavors: "Açaí Premium",
+          img: "imagens/acai_copo.png",
         },
       };
 
