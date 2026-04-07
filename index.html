@@ -627,7 +627,7 @@
         <div class="w-full lg:w-1/2 relative fade-up">
           <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1550853024-fae8cd4be47f?q=80&w=2089&auto=format&fit=crop"
+              src="imagens/mulher_sorvete.png"
               alt="Pessoas felizes tomando sorvete"
               class="w-full h-full object-cover"
               referrerpolicy="no-referrer"
@@ -728,11 +728,15 @@
               >
                 <video
                   class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
                   loop
                   playsinline
                   muted
-                ></video>
+                >
+                  <source
+                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/dog.mp4"
+                    type="video/mp4"
+                  />
+                </video>
 
                 <!-- Center Play Button -->
                 <button
@@ -801,11 +805,15 @@
               >
                 <video
                   class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
                   loop
                   playsinline
                   muted
-                ></video>
+                >
+                  <source
+                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/elephants.mp4"
+                    type="video/mp4"
+                  />
+                </video>
 
                 <!-- Center Play Button -->
                 <button
@@ -874,11 +882,15 @@
               >
                 <video
                   class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
                   loop
                   playsinline
                   muted
-                ></video>
+                >
+                  <source
+                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/sea-turtle.mp4"
+                    type="video/mp4"
+                  />
+                </video>
 
                 <!-- Center Play Button -->
                 <button
@@ -947,11 +959,15 @@
               >
                 <video
                   class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
                   loop
                   playsinline
                   muted
-                ></video>
+                >
+                  <source
+                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/kitten-playing.mp4"
+                    type="video/mp4"
+                  />
+                </video>
 
                 <!-- Center Play Button -->
                 <button
@@ -1643,32 +1659,32 @@
       // Product Modal Logic
       const productData = {
         pistache: {
-          title: "Pistache Siciliano",
+          title: "Pistache Premium",
           tag: "Mais pedido",
           desc: "Uma viagem sensorial à Sicília. Nosso gelato de pistache é elaborado com grãos selecionados e levemente tostados, garantindo uma cremosidade rica e um sabor autêntico e intenso que preenche o paladar.",
           flavors: "Gelato Artesanal",
-          img: "https://images.unsplash.com/photo-1556708236-0ce41f94a4b6?q=80&w=1974&auto=format&fit=crop",
+          img: "imagens/IMG_1303.JPG.jpeg",
         },
         chocolate: {
           title: "Chocolate Intenso 70%",
           tag: "Exclusivo",
           desc: "Para os verdadeiros apreciadores de cacau. Uma textura aveludada que derrete lentamente, revelando notas profundas, complexas e um final marcante que ecoa a pureza do chocolate amargo.",
           flavors: "Gelato Artesanal",
-          img: "https://images.unsplash.com/photo-1570197781417-0a5237500ee3?q=80&w=2070&auto=format&fit=crop",
+          img: "imagens/IMG_1298.JPG.jpeg",
         },
         frutas: {
-          title: "Frutas Vermelhas Selvagens",
+          title: "Sensação",
           tag: "Edição Limitada",
           desc: "A essência do frescor capturada em um picolé premium. Uma combinação vibrante de morangos, framboesas e amoras, oferecendo uma acidez perfeitamente equilibrada com a doçura natural das frutas.",
           flavors: "Picolé Premium",
-          img: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop",
+          img: "imagens/IMG_1295.JPG.jpeg",
         },
         baunilha: {
           title: "Baunilha Bourbon",
           tag: "Seleção da Casa",
           desc: "O clássico elevado à sua forma mais pura. Infusionado com favas de baunilha Bourbon de Madagascar, este gelato é suave, delicado e profundamente envolvente, com pontinhos pretos que atestam sua pureza.",
           flavors: "Criações Sazonais",
-          img: "https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop",
+          img: "imagens/IMG_1297.JPG.jpeg",
         },
       };
 
@@ -1838,18 +1854,39 @@
         const muteIcon = muteBtn.querySelector(".mute-icon");
         const unmuteIcon = muteBtn.querySelector(".unmute-icon");
 
+        let controlsTimeout;
+
+        const hideControls = () => {
+          if (!video.paused) {
+            playPauseBtn.classList.add("opacity-0", "pointer-events-none");
+          }
+        };
+
+        const showControls = () => {
+          playPauseBtn.classList.remove("opacity-0", "pointer-events-none");
+          clearTimeout(controlsTimeout);
+          if (!video.paused) {
+            controlsTimeout = setTimeout(() => {
+              if (!card.matches(":hover")) {
+                hideControls();
+              }
+            }, 2500);
+          }
+        };
+
         playPauseBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           if (video.paused) {
             video.play();
             playIcon.classList.add("hidden");
             pauseIcon.classList.remove("hidden");
-            playPauseBtn.classList.add("opacity-0", "pointer-events-none");
+            showControls();
           } else {
             video.pause();
             playIcon.classList.remove("hidden");
             pauseIcon.classList.add("hidden");
             playPauseBtn.classList.remove("opacity-0", "pointer-events-none");
+            clearTimeout(controlsTimeout);
           }
         });
 
@@ -1866,9 +1903,22 @@
           }
         });
 
-        // Optional: Play/pause on video click
-        video.addEventListener("click", () => {
-          playPauseBtn.click();
+        // Mostrar controles ao passar o mouse (Desktop)
+        card.addEventListener("mouseenter", showControls);
+        card.addEventListener("mouseleave", hideControls);
+
+        // Mostrar controles ao tocar no vídeo (Mobile/Tablet)
+        video.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (video.paused) {
+            playPauseBtn.click();
+          } else {
+            if (playPauseBtn.classList.contains("opacity-0")) {
+              showControls();
+            } else {
+              playPauseBtn.click();
+            }
+          }
         });
       });
     </script>
