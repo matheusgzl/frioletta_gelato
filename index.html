@@ -298,13 +298,26 @@
         class="hidden md:block w-full md:w-1/2 h-[45%] md:h-full relative overflow-hidden"
       >
         <div
-          class="absolute top-[-5vh] left-0 w-full h-[90vh] parallax-wrapper"
+          class="absolute top-[-50vh] left-0 w-full h-[150vh] parallax-wrapper"
           data-speed="-0.6"
+          id="hero-carousel"
         >
           <img
-            src="imagens/acai_copo.png"
+            src="imagens/avela_potinho.png"
             alt="Mulher sorrindo tomando sorvete no verão"
-            class="w-full h-full object-cover"
+            class="absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 opacity-100"
+            referrerpolicy="no-referrer"
+          />
+          <img
+            src="imagens/casquinha_pistache.png"
+            alt="Gelato de Pistache"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+            referrerpolicy="no-referrer"
+          />
+          <img
+            src="imagens/picole_ferrero_roche.png"
+            alt="Gelato de Baunilha"
+            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
             referrerpolicy="no-referrer"
           />
         </div>
@@ -1473,6 +1486,23 @@
     <script>
       // Initialize Lucide Icons
       lucide.createIcons();
+
+      // Hero Invisible Carousel
+      const heroCarousel = document.getElementById("hero-carousel");
+      if (heroCarousel) {
+        const images = heroCarousel.querySelectorAll("img");
+        let currentImgIndex = 0;
+
+        setInterval(() => {
+          images[currentImgIndex].classList.remove("opacity-100");
+          images[currentImgIndex].classList.add("opacity-0");
+
+          currentImgIndex = (currentImgIndex + 1) % images.length;
+
+          images[currentImgIndex].classList.remove("opacity-0");
+          images[currentImgIndex].classList.add("opacity-100");
+        }, 4000);
+      }
 
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("mobile-menu-btn");
