@@ -111,6 +111,12 @@
       .delay-400 {
         transition-delay: 400ms;
       }
+
+      /* Fix for border-radius clipping during scale animations */
+    .product-card {
+      transform: translateZ(0);
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+    }
     </style>
   </head>
   <body class="font-sans selection:bg-frio-red selection:text-white">
@@ -298,11 +304,11 @@
         class="hidden md:block w-full md:w-1/2 h-[45%] md:h-full relative overflow-hidden"
       >
         <div
-          class="absolute top-[-10vh] left-0 w-full h-[120vh] parallax-wrapper"
+          class="absolute top-[-20vh] left-0 w-full h-[130vh] parallax-wrapper"
           data-speed="-0.6"
         >
           <img
-            src="imagens/mulher_sorvete.png"
+            src="imagens/IMG_5031.jpg"
             alt="Mulher sorrindo tomando sorvete no verão"
             class="w-full h-full object-cover"
             referrerpolicy="no-referrer"
@@ -496,7 +502,7 @@
                     >
                   </div>
                   <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
-                    Chocolate Intenso 70%
+                    Ferrero Rocher
                   </h3>
                   <p
                     class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
@@ -634,7 +640,7 @@
                     >
                   </div>
                   <h3 class="font-display text-4xl lg:text-5xl text-white mb-3">
-                    Baunilha Bourbon
+                    Skimo Tradicional- Flocos
                   </h3>
                   <p
                     class="text-white/90 font-light text-lg mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0"
@@ -652,21 +658,7 @@
             </div>
           </div>
 
-          <!-- Flavors Controls -->
-          <div class="flex justify-center gap-4 mt-12">
-            <button
-              id="prev-flavor"
-              class="w-14 h-14 rounded-full border border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
-            >
-              <i data-lucide="chevron-left" class="w-6 h-6"></i>
-            </button>
-            <button
-              id="next-flavor"
-              class="w-14 h-14 rounded-full border border-gray-300 text-gray-500 flex items-center justify-center hover:bg-frio-red hover:border-frio-red hover:text-white transition-all active:scale-95"
-            >
-              <i data-lucide="chevron-right" class="w-6 h-6"></i>
-            </button>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -1638,8 +1630,6 @@
 
       // Flavors Carousel Logic
       const flavorsTrack = document.getElementById("flavors-track");
-      const prevFlavorBtn = document.getElementById("prev-flavor");
-      const nextFlavorBtn = document.getElementById("next-flavor");
 
       if (flavorsTrack) {
         let fIndex = 0;
@@ -1700,55 +1690,9 @@
           }
         }
 
-        function prevFlavor() {
-          if (isTransitioning) return;
-          isTransitioning = true;
-
-          if (fIndex === 0) {
-            // Jump to the cloned set first without animation
-            fIndex = fTotal;
-            updateFlavorsCarousel(false);
-
-            // Then animate to the previous item
-            setTimeout(() => {
-              fIndex--;
-              updateFlavorsCarousel(true);
-              setTimeout(() => {
-                isTransitioning = false;
-              }, 1000);
-            }, 50);
-          } else {
-            fIndex--;
-            updateFlavorsCarousel();
-            setTimeout(() => {
-              isTransitioning = false;
-            }, 1000);
-          }
-        }
-
-        function resetFlavorInterval() {
-          clearInterval(flavorInterval);
+        
           flavorInterval = setInterval(nextFlavor, 4000);
-        }
-
-        if (prevFlavorBtn && nextFlavorBtn) {
-          prevFlavorBtn.addEventListener("click", () => {
-            prevFlavor();
-            resetFlavorInterval();
-          });
-          nextFlavorBtn.addEventListener("click", () => {
-            nextFlavor();
-            resetFlavorInterval();
-          });
-        }
-
-        // Pause on hover
-        flavorsTrack.addEventListener("mouseenter", () =>
-          clearInterval(flavorInterval),
-        );
-        flavorsTrack.addEventListener("mouseleave", () => {
-          resetFlavorInterval();
-        });
+      
 
         window.addEventListener("resize", () => {
           updateFlavorsCarousel(false);
@@ -1756,7 +1700,6 @@
 
         // Initialize
         updateFlavorsCarousel(false);
-        flavorInterval = setInterval(nextFlavor, 4000); // Auto-play every 4s
       }
 
       // Product Modal Logic
@@ -1764,28 +1707,28 @@
         pistache: {
           title: "Pistache Premium",
           tag: "Mais pedido",
-          desc: "Uma viagem sensorial à Sicília. Nosso gelato de pistache é elaborado com grãos selecionados e levemente tostados, garantindo uma cremosidade rica e um sabor autêntico e intenso que preenche o paladar.",
+          desc: "Maravilhoso picolé de pistache, feito com uma camada bem crocante de creme de pistache com pedacinhos de pistache por fora, e por dentro o delicioso e cremoso sorvete.",
           flavors: "Gelato Artesanal",
           img: "imagens/IMG_1303.JPG.jpeg",
         },
         chocolate: {
-          title: "Chocolate Intenso 70%",
+          title: "Ferrero Rocher",
           tag: "Exclusivo",
-          desc: "Para os verdadeiros apreciadores de cacau. Uma textura aveludada que derrete lentamente, revelando notas profundas, complexas e um final marcante que ecoa a pureza do chocolate amargo.",
+          desc: "Irresistível picolé de Ferrero Rocher, feito com uma camada bem crocante de chocolate com castanhas por fora e por dentro sorvete delicioso e bem cremoso de chocolate",
           flavors: "Gelato Artesanal",
           img: "imagens/IMG_1298.JPG.jpeg",
         },
         frutas: {
           title: "Sensação",
           tag: "Edição Limitada",
-          desc: "A essência do frescor capturada em um picolé premium. Uma combinação vibrante de morangos, framboesas e amoras, oferecendo uma acidez perfeitamente equilibrada com a doçura natural das frutas.",
+          desc: "Irresistível picolé de Sensação, feito de uma camada deliciosa e crocante de chocolate com castanhas por fora e por dentro a cremosidade e sabor do sorvete de morango a base leite.",
           flavors: "Picolé Premium",
           img: "imagens/IMG_1295.JPG.jpeg",
         },
         baunilha: {
-          title: "Baunilha Bourbon",
+          title: "Skimo Tradicional- Flocos",
           tag: "Seleção da Casa",
-          desc: "O clássico elevado à sua forma mais pura. Infusionado com favas de baunilha Bourbon de Madagascar, este gelato é suave, delicado e profundamente envolvente, com pontinhos pretos que atestam sua pureza.",
+          desc: "Irresistível picolé de Skimo Tradicional, feito com uma camada deliciosa e crocante de chocolate com castanhas por fora e por dentro sorvete super cremoso sabor de leite Ninho.",
           flavors: "Criações Sazonais",
           img: "imagens/IMG_1297.JPG.jpeg",
         },
