@@ -113,10 +113,10 @@
       }
 
       /* Fix for border-radius clipping during scale animations */
-    .product-card {
-      transform: translateZ(0);
-      -webkit-mask-image: -webkit-radial-gradient(white, black);
-    }
+      .product-card {
+        transform: translateZ(0);
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+      }
     </style>
   </head>
   <body class="font-sans selection:bg-frio-red selection:text-white">
@@ -657,14 +657,15 @@
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     </section>
 
     <!-- Experience / About Section -->
-    <section id="experiencia" class="py-24 px-6 bg-white overflow-hidden">
+    <section
+      id="experiencia"
+      class="py-24 px-6 bg-white overflow-hidden scroll-mt-20"
+    >
       <div
         class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24"
       >
@@ -692,7 +693,7 @@
               />
               <text class="text-[12px] font-bold uppercase tracking-widest">
                 <textPath href="#curve">
-                  • ONDE O VERÃO NUNCA ACABA • FRIOLETTA GELATERIA
+                  • ONDE O VERÃO NUNCA ACABA • FRIOLETTA GELATO
                 </textPath>
               </text>
             </svg>
@@ -745,6 +746,130 @@
             <p class="text-sm text-gray-500 font-medium">
               Junte-se a milhares de<br />apaixonados por verão.
             </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="max-w-7xl mx-auto mt-24 px-0 sm:px-6 fade-up">
+        <div class="mb-12 text-center">
+          <h3 class="font-display text-4xl md:text-5xl text-frio-purple mb-4">
+            Galeria Frioletta
+          </h3>
+          <p class="text-gray-600 text-lg">Um pouco do nosso universo.</p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 grid-rows-3 md:grid-rows-2 gap-2 sm:gap-4 h-[700px] md:h-[500px]"
+        >
+          <!-- Image 1: Tall -->
+          <div
+            class="col-span-1 row-span-2 relative sm:rounded-2xl overflow-hidden group cursor-pointer gallery-item"
+            data-src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2000&auto=format&fit=crop"
+            data-caption="Nosso Sorvete"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=800&auto=format&fit=crop"
+              alt="Gallery"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center"
+            >
+              <i
+                data-lucide="zoom-in"
+                class="text-white w-8 h-8 mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Image 2: Wide / Square on Mobile -->
+          <div
+            class="col-span-1 md:col-span-2 row-span-1 relative sm:rounded-2xl overflow-hidden group cursor-pointer gallery-item"
+            data-src="https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=2000&auto=format&fit=crop"
+            data-caption="Momentos Doces"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1557142046-c704a3adf364?q=80&w=1200&auto=format&fit=crop"
+              alt="Gallery"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center"
+            >
+              <i
+                data-lucide="zoom-in"
+                class="text-white w-8 h-8 mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Image 3: Square -->
+          <div
+            class="col-span-1 row-span-1 relative sm:rounded-2xl overflow-hidden group cursor-pointer gallery-item"
+            data-src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2000&auto=format&fit=crop"
+            data-caption="Ingredientes Frescos"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=800&auto=format&fit=crop"
+              alt="Gallery"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center"
+            >
+              <i
+                data-lucide="zoom-in"
+                class="text-white w-8 h-8 mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Image 4: Square (Hidden on mobile) -->
+          <div
+            class="col-span-1 row-span-1 relative sm:rounded-2xl overflow-hidden group cursor-pointer gallery-item hidden md:block"
+            data-src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2000&auto=format&fit=crop"
+            data-caption="Ambiente Acolhedor"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
+              alt="Gallery"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center"
+            >
+              <i
+                data-lucide="zoom-in"
+                class="text-white w-8 h-8 mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300"
+              ></i>
+            </div>
+          </div>
+
+          <!-- Image 5: Wide -->
+          <div
+            class="col-span-2 row-span-1 relative sm:rounded-2xl overflow-hidden group cursor-pointer gallery-item"
+            data-src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?q=80&w=2000&auto=format&fit=crop"
+            data-caption="Feito com Amor"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?q=80&w=1200&auto=format&fit=crop"
+              alt="Gallery"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+            <div
+              class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center"
+            >
+              <i
+                data-lucide="zoom-in"
+                class="text-white w-8 h-8 mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-300"
+              ></i>
+            </div>
           </div>
         </div>
       </div>
@@ -1170,7 +1295,9 @@
             >
               <i data-lucide="ice-cream" class="w-5 h-5"></i>
             </div>
-            <span class="font-display text-3xl tracking-wide">Frioletta Gelateria</span>
+            <span class="font-display text-3xl tracking-wide"
+              >Frioletta Gelateria</span
+            >
           </div>
           <p class="text-white/70 max-w-sm text-lg font-light mb-8">
             Onde o verão nunca acaba. Sorvetes, picolés e açaí artesanais feitos
@@ -1690,9 +1817,7 @@
           }
         }
 
-        
-          flavorInterval = setInterval(nextFlavor, 4000);
-      
+        flavorInterval = setInterval(nextFlavor, 4000);
 
         window.addEventListener("resize", () => {
           updateFlavorsCarousel(false);
