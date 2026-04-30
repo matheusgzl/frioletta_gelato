@@ -115,6 +115,7 @@
       /* Fix for border-radius clipping during scale animations */
       .product-card {
         transform: translateZ(0);
+        mask-image: radial-gradient(white, black);
         -webkit-mask-image: -webkit-radial-gradient(white, black);
       }
     </style>
@@ -885,334 +886,411 @@
           </p>
         </div>
 
-        <div class="relative overflow-hidden px-4" id="testimonial-carousel">
+        <!-- Video Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 pb-10 max-w-7xl mx-auto"
+        >
           <div
-            class="flex transition-transform duration-500 ease-in-out"
-            id="testimonial-track"
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-left"
+            style="transition-delay: 0ms"
           >
-            <!-- Testimonial 1 -->
-            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
-              <div
-                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/dog.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/dog.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
+            >
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
+            </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
               >
-                <video
-                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  loop
-                  playsinline
-                  muted
-                >
-                  <source
-                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/dog.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-
-                <!-- Center Play Button -->
-                <button
-                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
-                >
-                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
-                  <i
-                    data-lucide="pause"
-                    class="w-10 h-10 hidden pause-icon"
-                  ></i>
-                </button>
-
-                <!-- Video Controls -->
-                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
-                  <button
-                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
-                  >
-                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
-                    <i
-                      data-lucide="volume-2"
-                      class="w-4 h-4 hidden unmute-icon"
-                    ></i>
-                  </button>
-                </div>
-
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
-                ></div>
-
-                <!-- Content -->
-                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                  <div class="flex gap-1 text-frio-orange mb-4">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
-                        alt="Mariana Silva"
-                        class="w-full h-full object-cover"
-                        referrerpolicy="no-referrer"
-                      />
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-white text-sm">
-                        Mariana Silva
-                      </h4>
-                      <p class="text-xs text-white/70">Cliente Fiel</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
             </div>
-
-            <!-- Testimonial 2 -->
-            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
-              <div
-                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
-              >
-                <video
-                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  loop
-                  playsinline
-                  muted
-                >
-                  <source
-                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/elephants.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-
-                <!-- Center Play Button -->
-                <button
-                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
-                >
-                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
-                  <i
-                    data-lucide="pause"
-                    class="w-10 h-10 hidden pause-icon"
-                  ></i>
-                </button>
-
-                <!-- Video Controls -->
-                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
-                  <button
-                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
-                  >
-                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
-                    <i
-                      data-lucide="volume-2"
-                      class="w-4 h-4 hidden unmute-icon"
-                    ></i>
-                  </button>
-                </div>
-
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
-                ></div>
-
-                <!-- Content -->
-                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                  <div class="flex gap-1 text-frio-orange mb-4">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-                        alt="Carlos Mendes"
-                        class="w-full h-full object-cover"
-                        referrerpolicy="no-referrer"
-                      />
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-white text-sm">
-                        Carlos Mendes
-                      </h4>
-                      <p class="text-xs text-white/70">Pai de Gêmeos</p>
-                    </div>
-                  </div>
-                </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
               </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
-              <div
-                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
-              >
-                <video
-                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  loop
-                  playsinline
-                  muted
-                >
-                  <source
-                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/sea-turtle.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-
-                <!-- Center Play Button -->
-                <button
-                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
-                >
-                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
-                  <i
-                    data-lucide="pause"
-                    class="w-10 h-10 hidden pause-icon"
-                  ></i>
-                </button>
-
-                <!-- Video Controls -->
-                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
-                  <button
-                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
-                  >
-                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
-                    <i
-                      data-lucide="volume-2"
-                      class="w-4 h-4 hidden unmute-icon"
-                    ></i>
-                  </button>
-                </div>
-
-                <!-- Gradient Overlay -->
+              <div class="flex items-center gap-3">
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
-                ></div>
-
-                <!-- Content -->
-                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                  <div class="flex gap-1 text-frio-orange mb-4">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
-                        alt="Ana Beatriz"
-                        class="w-full h-full object-cover"
-                        referrerpolicy="no-referrer"
-                      />
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-white text-sm">
-                        Ana Beatriz
-                      </h4>
-                      <p class="text-xs text-white/70">Foodie</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="w-full flex-shrink-0 px-4 md:w-1/2 lg:w-1/3">
-              <div
-                class="relative bg-black rounded-[2rem] h-[550px] flex flex-col shadow-xl overflow-hidden group"
-              >
-                <video
-                  class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
-                  loop
-                  playsinline
-                  muted
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
                 >
-                  <source
-                    src="https://res.cloudinary.com/demo/video/upload/v1604051062/kitten-playing.mp4"
-                    type="video/mp4"
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop"
+                    alt="Mariana Silva"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
                   />
-                </video>
-
-                <!-- Center Play Button -->
-                <button
-                  class="play-pause-btn absolute inset-0 m-auto w-20 h-20 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
-                >
-                  <i data-lucide="play" class="w-10 h-10 ml-1.5 play-icon"></i>
-                  <i
-                    data-lucide="pause"
-                    class="w-10 h-10 hidden pause-icon"
-                  ></i>
-                </button>
-
-                <!-- Video Controls -->
-                <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
-                  <button
-                    class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
-                  >
-                    <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i>
-                    <i
-                      data-lucide="volume-2"
-                      class="w-4 h-4 hidden unmute-icon"
-                    ></i>
-                  </button>
                 </div>
-
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"
-                ></div>
-
-                <!-- Content -->
-                <div class="absolute bottom-0 left-0 w-full p-6 z-10">
-                  <div class="flex gap-1 text-frio-orange mb-4">
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    <i data-lucide="star" class="w-4 h-4 text-white/30"></i>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden border-2 border-white/50 shadow-sm"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
-                        alt="Rafael Costa"
-                        class="w-full h-full object-cover"
-                        referrerpolicy="no-referrer"
-                      />
-                    </div>
-                    <div>
-                      <h4 class="font-semibold text-white text-sm">
-                        Rafael Costa
-                      </h4>
-                      <p class="text-xs text-white/70">Designer</p>
-                    </div>
-                  </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Mariana Silva
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">
+                    Cliente Fiel
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Controls -->
-          <div class="flex justify-center gap-4 mt-12">
-            <button
-              id="prev-testimonial"
-              class="w-12 h-12 rounded-full border-2 border-frio-purple text-frio-purple flex items-center justify-center hover:bg-frio-purple hover:text-white transition-all active:scale-95"
+          <div
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-left"
+            style="transition-delay: 150ms"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/elephants.jpg"
             >
-              <i data-lucide="chevron-left" class="w-6 h-6"></i>
-            </button>
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/elephants.mp4"
+                type="video/mp4"
+              />
+            </video>
             <button
-              id="next-testimonial"
-              class="w-12 h-12 rounded-full border-2 border-frio-purple text-frio-purple flex items-center justify-center hover:bg-frio-purple hover:text-white transition-all active:scale-95"
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
             >
-              <i data-lucide="chevron-right" class="w-6 h-6"></i>
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
             </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
+              >
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
+                    alt="Carlos Mendes"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Carlos Mendes
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">
+                    Pai de Gêmeos
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-left"
+            style="transition-delay: 300ms"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/sea-turtle.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/sea-turtle.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
+            >
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
+            </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
+              >
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
+                    alt="Ana Beatriz"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Ana Beatriz
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">Foodie</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-right"
+            style="transition-delay: 300ms"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/kitten-playing.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/kitten-playing.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
+            >
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
+            </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
+              >
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 text-gray-400"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                    alt="Rafael Costa"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Rafael Costa
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">Designer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-right"
+            style="transition-delay: 150ms"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/skater.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/skater.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
+            >
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
+            </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
+              >
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=150&auto=format&fit=crop"
+                    alt="Larissa Gomes"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Larissa Gomes
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">
+                    Influenciadora
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative bg-white rounded-3xl h-[450px] shadow-lg overflow-hidden group fade-right"
+            style="transition-delay: 0ms"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover testimonial-video cursor-pointer"
+              loop
+              playsinline
+              muted
+              poster="https://res.cloudinary.com/demo/video/upload/v1604051062/snowboarding.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/demo/video/upload/v1604051062/snowboarding.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              class="play-pause-btn absolute inset-0 m-auto w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/60 transition-all duration-300 border border-white/30 shadow-2xl z-20"
+            >
+              <i data-lucide="play" class="w-8 h-8 ml-1 play-icon"></i
+              ><i data-lucide="pause" class="w-8 h-8 hidden pause-icon"></i>
+            </button>
+            <div class="absolute top-4 right-4 flex flex-col gap-3 z-20">
+              <button
+                class="mute-btn w-10 h-10 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/70 transition-colors border border-white/20 shadow-lg"
+              >
+                <i data-lucide="volume-x" class="w-4 h-4 mute-icon"></i
+                ><i
+                  data-lucide="volume-2"
+                  class="w-4 h-4 hidden unmute-icon"
+                ></i>
+              </button>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10"
+            ></div>
+            <div
+              class="absolute bottom-0 left-0 w-full p-6 z-20 pointer-events-none"
+            >
+              <div class="flex gap-1 text-yellow-500 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/50 shadow-sm shrink-0"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop"
+                    alt="Thiago Barros"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-white text-sm drop-shadow-md">
+                    Thiago Barros
+                  </h4>
+                  <p class="text-xs text-gray-200 drop-shadow-md">Fotógrafo</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1593,23 +1671,6 @@
       // Initialize Lucide Icons
       lucide.createIcons();
 
-      // Hero Invisible Carousel
-      const heroCarousel = document.getElementById("hero-carousel");
-      if (heroCarousel) {
-        const images = heroCarousel.querySelectorAll("img");
-        let currentImgIndex = 0;
-
-        setInterval(() => {
-          images[currentImgIndex].classList.remove("opacity-100");
-          images[currentImgIndex].classList.add("opacity-0");
-
-          currentImgIndex = (currentImgIndex + 1) % images.length;
-
-          images[currentImgIndex].classList.remove("opacity-0");
-          images[currentImgIndex].classList.add("opacity-100");
-        }, 4000);
-      }
-
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("mobile-menu-btn");
       const closeMenuBtn = document.getElementById("close-menu-btn");
@@ -1710,50 +1771,7 @@
         });
       });
 
-      // Testimonial Carousel
-      const track = document.getElementById("testimonial-track");
-      const prevBtn = document.getElementById("prev-testimonial");
-      const nextBtn = document.getElementById("next-testimonial");
-
-      if (track && prevBtn && nextBtn) {
-        let currentIndex = 0;
-        const items = track.children;
-        const totalItems = items.length;
-
-        function updateCarousel() {
-          let itemsPerView = 1;
-          if (window.innerWidth >= 1024) itemsPerView = 3;
-          else if (window.innerWidth >= 768) itemsPerView = 2;
-
-          const maxIndex = Math.max(0, totalItems - itemsPerView);
-          if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-          const percentage = -(currentIndex * (100 / itemsPerView));
-          track.style.transform = `translateX(${percentage}%)`;
-        }
-
-        prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
-        });
-
-        nextBtn.addEventListener("click", () => {
-          let itemsPerView = 1;
-          if (window.innerWidth >= 1024) itemsPerView = 3;
-          else if (window.innerWidth >= 768) itemsPerView = 2;
-
-          const maxIndex = Math.max(0, totalItems - itemsPerView);
-          if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-          }
-        });
-
-        window.addEventListener("resize", updateCarousel);
-        updateCarousel();
-      }
+      // Testimonial Carousel Removed in favor of infinite CSS marquee
 
       // Flavors Carousel Logic
       const flavorsTrack = document.getElementById("flavors-track");
@@ -1790,6 +1808,31 @@
 
           flavorsTrack.style.transform = `translateX(-${fIndex * itemWidth}%)`;
 
+          // Update classes for zoom and fade effects
+          Array.from(flavorsTrack.children).forEach((child, index) => {
+            const card = child.querySelector(".product-card");
+            if (!card) return;
+
+            // is-visible: card is currently in the viewport
+            if (index >= fIndex && index < fIndex + ipv) {
+              card.classList.remove("scale-95", "opacity-60");
+              card.classList.add("scale-100", "opacity-100");
+            } else {
+              card.classList.remove("scale-100", "opacity-100");
+              card.classList.add("scale-95", "opacity-60");
+            }
+
+            // is-active: the main card in focus
+            let activeIndex = fIndex;
+            if (ipv === 3) activeIndex = fIndex + 1; // Center card on desktop
+
+            if (index === activeIndex) {
+              card.classList.add("is-active");
+            } else {
+              card.classList.remove("is-active");
+            }
+          });
+
           if (!animate) {
             // Force reflow
             void flavorsTrack.offsetWidth;
@@ -1817,6 +1860,9 @@
           }
         }
 
+        // Removed button click listeners as buttons were removed from DOM
+
+        // Auto-play interval
         flavorInterval = setInterval(nextFlavor, 4000);
 
         window.addEventListener("resize", () => {
@@ -1830,39 +1876,39 @@
       // Product Modal Logic
       const productData = {
         pistache: {
-          title: "Pistache Premium",
+          title: "Pistache Siciliano",
           tag: "Mais pedido",
-          desc: "Maravilhoso picolé de pistache, feito com uma camada bem crocante de creme de pistache com pedacinhos de pistache por fora, e por dentro o delicioso e cremoso sorvete.",
+          desc: "Uma viagem sensorial à Sicília. Nosso gelato de pistache é elaborado com grãos selecionados e levemente tostados, garantindo uma cremosidade rica e um sabor autêntico e intenso que preenche o paladar.",
           flavors: "Gelato Artesanal",
-          img: "imagens/IMG_1303.JPG.jpeg",
+          img: "https://images.unsplash.com/photo-1556708236-0ce41f94a4b6?q=80&w=1974&auto=format&fit=crop",
         },
         chocolate: {
-          title: "Ferrero Rocher",
+          title: "Chocolate Intenso 70%",
           tag: "Exclusivo",
-          desc: "Irresistível picolé de Ferrero Rocher, feito com uma camada bem crocante de chocolate com castanhas por fora e por dentro sorvete delicioso e bem cremoso de chocolate",
+          desc: "Para os verdadeiros apreciadores de cacau. Uma textura aveludada que derrete lentamente, revelando notas profundas, complexas e um final marcante que ecoa a pureza do chocolate amargo.",
           flavors: "Gelato Artesanal",
-          img: "imagens/IMG_1298.JPG.jpeg",
+          img: "https://images.unsplash.com/photo-1570197781417-0a5237500ee3?q=80&w=2070&auto=format&fit=crop",
         },
         frutas: {
-          title: "Sensação",
+          title: "Frutas Vermelhas Selvagens",
           tag: "Edição Limitada",
-          desc: "Irresistível picolé de Sensação, feito de uma camada deliciosa e crocante de chocolate com castanhas por fora e por dentro a cremosidade e sabor do sorvete de morango a base leite.",
+          desc: "A essência do frescor capturada em um picolé premium. Uma combinação vibrante de morangos, framboesas e amoras, oferecendo uma acidez perfeitamente equilibrada com a doçura natural das frutas.",
           flavors: "Picolé Premium",
-          img: "imagens/IMG_1295.JPG.jpeg",
+          img: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=2070&auto=format&fit=crop",
         },
         baunilha: {
-          title: "Skimo Tradicional- Flocos",
+          title: "Baunilha Bourbon",
           tag: "Seleção da Casa",
-          desc: "Irresistível picolé de Skimo Tradicional, feito com uma camada deliciosa e crocante de chocolate com castanhas por fora e por dentro sorvete super cremoso sabor de leite Ninho.",
+          desc: "O clássico elevado à sua forma mais pura. Infusionado com favas de baunilha Bourbon de Madagascar, este gelato é suave, delicado e profundamente envolvente, com pontinhos pretos que atestam sua pureza.",
           flavors: "Criações Sazonais",
-          img: "imagens/IMG_1297.JPG.jpeg",
+          img: "https://images.unsplash.com/photo-1563805042-7684c8e9e5cb?q=80&w=2027&auto=format&fit=crop",
         },
         acai: {
           title: "Açaí Tradicional",
           tag: "Energia",
           desc: "Puro, refrescante e cheio de energia para o seu dia. Nosso açaí premium é preparado com a polpa mais pura, garantindo uma textura aveludada e um sabor autêntico da Amazônia.",
           flavors: "Açaí Premium",
-          img: "imagens/acai_copo.png",
+          img: "https://images.unsplash.com/photo-1590581452441-248148b525d8?q=80&w=1974&auto=format&fit=crop",
         },
       };
 
@@ -1938,10 +1984,14 @@
       let galleryData = [];
 
       // Initialize gallery data
-      galleryItems.forEach((item) => {
-        const img = item.querySelector("img");
-        const caption = item.querySelector("p").textContent;
-        galleryData.push({ src: img.src, caption: caption });
+      galleryItems.forEach((item, index) => {
+        const src = item.dataset.src || item.querySelector("img").src;
+        const caption = item.dataset.caption || "";
+        galleryData.push({ src: src, caption: caption });
+
+        item.addEventListener("click", () => {
+          openLightbox(index);
+        });
       });
 
       function openLightbox(index) {
@@ -1991,10 +2041,6 @@
           (currentLightboxIndex - 1 + galleryData.length) % galleryData.length;
         updateLightboxImage();
       }
-
-      galleryItems.forEach((item, index) => {
-        item.addEventListener("click", () => openLightbox(index));
-      });
 
       closeLightboxBtn?.addEventListener("click", closeLightbox);
       nextLightboxBtn?.addEventListener("click", (e) => {
